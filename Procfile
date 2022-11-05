@@ -1,0 +1,1 @@
+web: gunicorn sentry_log.wsgi
