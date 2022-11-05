@@ -1,1 +1,1 @@
-web: gunicorn sentry_log.wsgi
+web: gunicorn sentry-log.wsgi
