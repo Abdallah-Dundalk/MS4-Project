@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block content %}
+        
+    <table>
+        {% for item in items %}
+        <tr>
+            <td>{{ item.first_name}}</td>
+            <td>{{ item.last_name}}</td>
+            <td>{{ item.company}}</td>
+            <td>{{ item.phone_number}}</td>
+            <td>{{ item.destination}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}
