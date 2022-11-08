@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
-
+import datetime
 # Create your models here.
 
 ON_SITE_STATUS = ((0, "On Site"), (1, "Off Site"))
@@ -28,6 +28,7 @@ class AccessLog(models.Model):
     destination = models.CharField(max_length=50)
     time_in = models.DateTimeField(blank=True)
     time_out = models.DateTimeField(blank=True)
+    entry_date = models.DateField(auto_now_add=True)
     on_site_status = models.BooleanField(default=True)
     over_stayed_status = models.BooleanField(default=False)
     signature = CloudinaryField('image', default='placeholder')
