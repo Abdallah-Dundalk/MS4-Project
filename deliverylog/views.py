@@ -14,3 +14,7 @@ def get_access_log_page(request):
         'items': items
     }
     return render(request, 'access_log.html', context)
+
+
+def get_access_form_page(request):
+    return render(request, 'access_form.html')
