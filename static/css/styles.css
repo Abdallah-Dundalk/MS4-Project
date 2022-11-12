@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/*!
+/* !
 * Start Bootstrap - Grayscale v7.0.5 (https://startbootstrap.com/theme/grayscale)
 * Copyright 2013-2022 Start Bootstrap
 * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-grayscale/blob/master/LICENSE)
@@ -11698,3 +11698,36 @@ body {
 .footer {
   padding: 5rem 0;
 }
+
+/* ------------------------------------------------- */
+
+
+.signature-pad {
+  cursor: url(pen.png) 1 26, pointer;
+  border: 2px solid var(--primary-color);
+  border-radius: 4px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.clear-button {
+  color: var(--primary-color);
+  
+}
+
+.submit-button {
+  width: 100%;
+  background-color: var(--primary-color);
+  border: none;
+  padding: 0.5rem 1rem;
+  color: black;
+  cursor: pointer;
+  margin-top: 2rem;
+}
+
+/* @media (pointer: coarse) {
+  might need to come backto this
+  body {
+    overflow:hidden;
+  }
+} */

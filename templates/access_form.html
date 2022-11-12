@@ -2,7 +2,8 @@
 
 {% block content %}
 <div class="container">
-    <form>
+    <form method="POST" action="" class="signature-pad-form">
+        {% csrf_token %}
         <div class="row">
             <div class="col m-md-1">
                 <label for="fname">First Name:</label>
@@ -16,11 +17,13 @@
         <div class="row">
             <div class="col m-md-1">
                 <label for="phone_number">Phone Number:</label>
-                <input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="Phone Number">
+                <input type="text" class="form-control" id="phone_number" name="phone_number"
+                    placeholder="Phone Number">
             </div>
             <div class="col m-md-1">
                 <label for="vehicle_registration">Vehicle Registration:</label>
-                <input type="text" class="form-control" id="vehicle_registration" name="vehicle_registration" placeholder="Vehicle Registration">
+                <input type="text" class="form-control" id="vehicle_registration" name="vehicle_registration"
+                    placeholder="Vehicle Registration">
             </div>
         </div>
         <div class="row">
@@ -36,48 +39,93 @@
         <div class="row">
             <div class="col m-md-1">
                 <label for="gate">Gate:</label>
-                <input type="text" class="form-control" id="gate" name="gate" placeholder="Gate">
+                <input type="number" class="form-control" id="gate" name="gate" placeholder="Gate">
             </div>
             <div class="col m-md-1">
                 <label for="parking_time_limit">Parking Time Limit:</label>
-                <input type="text" class="form-control" id="parking_time_limit" name="parking_time_limit" placeholder="Parking Time Limit">
+                <input type="datetime-local" class="form-control" id="parking_time_limit" name="parking_time_limit"
+                    placeholder="Parking Time Limit">
             </div>
         </div>
         <div class="row">
             <div class="col m-md-1">
                 <label for="officers_name">Officer's Name:</label>
-                <input type="text" class="form-control" id="officers_name" name="officers_name" placeholder="Officer's Name">
+                <input type="text" class="form-control" id="officers_name" name="officers_name"
+                    placeholder="Officer's Name">
             </div>
             <div class="col m-md-1">
                 <div type="button" class="btn-sm pb-2 pt-2  btn-primary btn-block mt-4" data-bs-toggle="collapse"
-                data-bs-target="#collapse-target" aria-expanded="false" aria-controls="collapse-target">Add Passengers</div>
+                    data-bs-target="#collapse-target" aria-expanded="false" aria-controls="collapse-target">Add
+                    Passengers</div>
             </div>
             <div class="collapse" id="collapse-target">
                 <div class="row">
                     <div class="col m-md-1">
                         <label for="passenger_1">Passenger 1:</label>
-                        <input type="text" class="form-control" id="passenger_1" name="passenger_1" placeholder="Passenger 1">
+                        <input type="text" class="form-control" id="passenger_1" name="passenger_1"
+                            placeholder="Passenger 1">
                     </div>
                     <div class="col m-md-1">
                         <label for="passenger_2">Passenger 2:</label>
-                        <input type="text" class="form-control" id="passenger_2" name="passenger_2" placeholder="Passenger 2">
+                        <input type="text" class="form-control" id="passenger_2" name="passenger_2"
+                            placeholder="Passenger 2">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col m-md-1">
                         <label for="passenger_3">Passenger 3:</label>
-                        <input type="text" class="form-control" id="passenger_3" name="passenger_3" placeholder="Passenger 3">
+                        <input type="text" class="form-control" id="passenger_3" name="passenger_3"
+                            placeholder="Passenger 3">
                     </div>
                     <div class="col m-md-1">
                         <label for="passenger_4">Passenger 4:</label>
-                        <input type="text" class="form-control" id="passenger_4" name="passenger_4" placeholder="Passenger 4">
+                        <input type="text" class="form-control" id="passenger_4" name="passenger_4"
+                            placeholder="Passenger 4">
                     </div>
                 </div>
             </div>
+            
+            
+            <div class="container border">
 
             
+            <div class="row">
+                <div class="col-8">
+                    <h1>Site Rules</h1>
+                    <ul>
+                        <li>The emergency contact phone number on site is 6666</li>
+                        <li>The speed limit on site is 15ph</li>
+                        <li>Smoking is only permitted in designated smoking shelters</li>
+                        <li>Park only in designated parking spaces</li>
+                        <li>Children under the age of 18 are not allowed on site</li>
+                        <li>Parking is permitted for 30 minutes unless advised otherwise</li>
+                        <li>All vehicles entering site are subject to search</li>
+                    </ul>
+                </div>
+                <div class="col-4">
+                    <h1>Acknowledgement</h1>
+                    <p>I, the undersigned, understand and accept the site rules</p>
+
+                    <p>
+                        <strong>Signature</strong>
+                    </p>
+
+                    <canvas height="200px" width="320px" class="signature-pad border" ></canvas>
+
+                    <p>
+                        <a href="#" class="clear-button">Clear</a>
+                    </p>
+
+                    <button class="submit-button" type="submit">SUBMIT</button>
+                </div>
+
+            </div>
         </div>
     </form>
+
+    
+        
+    
 </div>
 
 {% endblock %}
