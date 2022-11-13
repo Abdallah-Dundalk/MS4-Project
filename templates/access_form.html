@@ -6,12 +6,12 @@
         {% csrf_token %}
         <div class="row">
             <div class="col m-md-1">
-                <label for="fname">First Name:</label>
-                <input type="text" id="fname" name="fname" class="form-control" placeholder="First name">
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" name="first_name" class="form-control" placeholder="First name">
             </div>
             <div class="col m-md-1">
-                <label for="lname">Last Name:</label>
-                <input type="text" class="form-control" id="lname" name="lname" placeholder="Last name">
+                <label for="last_name">Last Name:</label>
+                <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last name">
             </div>
         </div>
         <div class="row">
@@ -21,8 +21,8 @@
                     placeholder="Phone Number">
             </div>
             <div class="col m-md-1">
-                <label for="vehicle_registration">Vehicle Registration:</label>
-                <input type="text" class="form-control" id="vehicle_registration" name="vehicle_registration"
+                <label for="registration">Vehicle Registration:</label>
+                <input type="text" class="form-control" id="registration" name="registration"
                     placeholder="Vehicle Registration">
             </div>
         </div>
@@ -38,8 +38,8 @@
         </div>
         <div class="row">
             <div class="col m-md-1">
-                <label for="gate">Gate:</label>
-                <input type="number" class="form-control" id="gate" name="gate" placeholder="Gate">
+                <label for="gate_number">Gate:</label>
+                <input type="number" class="form-control" id="gate_number" name="gate_number" placeholder="Gate">
             </div>
             <div class="col m-md-1">
                 <label for="parking_time_limit">Parking Time Limit:</label>
@@ -49,9 +49,9 @@
         </div>
         <div class="row">
             <div class="col m-md-1">
-                <label for="officers_name">Officer's Name:</label>
+                <label for="officer_names">Officer Name:</label>
                 <input type="text" class="form-control" id="officers_name" name="officers_name"
-                    placeholder="Officer's Name">
+                    placeholder="Officer Name">
             </div>
             <div class="col m-md-1">
                 <div type="button" class="btn-sm pb-2 pt-2  btn-primary btn-block mt-4" data-bs-toggle="collapse"
@@ -61,27 +61,71 @@
             <div class="collapse" id="collapse-target">
                 <div class="row">
                     <div class="col m-md-1">
-                        <label for="passenger_1">Passenger 1:</label>
-                        <input type="text" class="form-control" id="passenger_1" name="passenger_1"
-                            placeholder="Passenger 1">
+                        <label for="passenger1_first_name">Passenger 1 First Name:</label>
+                        <input type="text" class="form-control" id="passenger1_first_name" name="passenger1_first_name"
+                            placeholder="First Name">
                     </div>
                     <div class="col m-md-1">
-                        <label for="passenger_2">Passenger 2:</label>
-                        <input type="text" class="form-control" id="passenger_2" name="passenger_2"
-                            placeholder="Passenger 2">
+                        <label for="passenger1_last_name">Passenger 1 Last Name:</label>
+                        <input type="text" class="form-control" id="passenger1_last_name" name="passenger1_last_name"
+                            placeholder="Last Name">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col m-md-1">
-                        <label for="passenger_3">Passenger 3:</label>
-                        <input type="text" class="form-control" id="passenger_3" name="passenger_3"
-                            placeholder="Passenger 3">
+                        <label for="passenger2_first_name">Passenger 2 First Name:</label>
+                        <input type="text" class="form-control" id="passenger2_first_name" name="passenger2_first_name"
+                            placeholder="First Name">
                     </div>
                     <div class="col m-md-1">
-                        <label for="passenger_4">Passenger 4:</label>
-                        <input type="text" class="form-control" id="passenger_4" name="passenger_4"
-                            placeholder="Passenger 4">
+                        <label for="passenger2_last_name">Passenger 2 Last Name:</label>
+                        <input type="text" class="form-control" id="passenger2_last_name" name="passenger2_last_name"
+                            placeholder="Last Name">
                     </div>
+                </div>
+                <div class="row">
+                    <div class="col m-md-1">
+                        <label for="passenger3_first_name">Passenger 3 First Name:</label>
+                        <input type="text" class="form-control" id="passenger3_first_name" name="passenger3_first_name"
+                            placeholder="First Name">
+                    </div>
+                    <div class="col m-md-1">
+                        <label for="passenger3_last_name">Passenger 3 Last Name:</label>
+                        <input type="text" class="form-control" id="passenger3_last_name" name="passenger3_last_name"
+                            placeholder="Last Name">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col m-md-1">
+                        <label for="passenger4_first_name">Passenger 4 First Name:</label>
+                        <input type="text" class="form-control" id="passenger4_first_name" name="passenger4_first_name"
+                            placeholder="First Name">
+                    </div>
+                    <div class="col m-md-1">
+                        <label for="passenger4_last_name">Passenger 4 Last Name:</label>
+                        <input type="text" class="form-control" id="passenger4_last_name" name="passenger4_last_name"
+                            placeholder="Last Name">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col m-md-1">
+                    <label for="entry_date">Date:</label>
+                    <input type="date" class="form-control" id="entry_date" name="entry_date">
+                </div>
+                <div class="col m-md-1">
+                    <label for="created_on">Created:</label>
+                    <input type="datetime-local" class="form-control" id="created_on" name="created_on">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col m-md-1">
+                    <label for="time_in">Time In:</label>
+                    <input type="datetime-local" class="form-control" id="time_in" name="time_in">
+                </div>
+                <div class="col m-md-1">
+                    <label for="time_out">Time Out:</label>
+                    <input type="datetime-local" class="form-control" id="time_out" name="time_out">
                 </div>
             </div>
             

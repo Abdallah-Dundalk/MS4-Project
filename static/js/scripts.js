@@ -114,15 +114,15 @@ canvas.addEventListener('pointerdown', handlePointerDown, {passive: true});
 canvas.addEventListener('pointerup', handlePointerUp, {passive: true});
 canvas.addEventListener('pointermove', handlePointerMove, {passive: true});
 
-form.addEventListener('submit', (event) => {
-    event.preventDefault();
+// form.addEventListener('submit', (event) => {
+//     event.preventDefault();
 
-    const imageURL = canvas.toDataURL();
-    const image = document.createElement('img');
-    image.src = imageURL;
-    image.height = canvas.height;
-    image.width = canvas.width;
-    image.style.display = 'block';
-    form.appendChild(image);
-    clearPad();
-})
+//     const imageURL = canvas.toDataURL();
+//     const image = document.createElement('img');
+//     image.src = imageURL;
+//     image.height = canvas.height;
+//     image.width = canvas.width;
+//     image.style.display = 'block';
+//     form.appendChild(image);
+//     clearPad();
+// })
