@@ -26,8 +26,7 @@ class AccessLog(models.Model):
     registration = models.CharField(max_length=20)
     company = models.CharField(max_length=50)
     destination = models.CharField(max_length=50)
-    time_in = models.DateTimeField(blank=True)
-    time_out = models.DateTimeField(blank=True, null=True, default=None)
+    
     entry_date = models.DateField(auto_now_add=True)
     on_site_status = models.BooleanField(default=True, null=True)
     over_stayed_status = models.BooleanField(default=False, null=True)
@@ -35,8 +34,8 @@ class AccessLog(models.Model):
     parking_time_limit = models.DateTimeField(blank=True)
     officers_name = models.CharField(max_length=50, default="", blank=True)
     created_on = models.DateTimeField(auto_now=True, null=True)
-    
-
+    new_time_in = models.TimeField(auto_now_add=True, null=True, blank=True)
+    new_time_out = models.TimeField(auto_now_add=True, null=True, blank=True)
 
     class Meta:
         ordering = ['-created_on']
