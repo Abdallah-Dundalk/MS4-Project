@@ -10,7 +10,6 @@ OVER_STAYED_STATUS = ((0, "OK"), (1, "Over Stayed"))
 
 
 class AccessLog(models.Model):
-    null = True
     gate_number = models.IntegerField()
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
@@ -26,8 +25,8 @@ class AccessLog(models.Model):
     registration = models.CharField(max_length=20)
     company = models.CharField(max_length=50)
     destination = models.CharField(max_length=50)
-    time_in = models.DateTimeField(blank=True)
-    time_out = models.DateTimeField(blank=True, null=True, default=None)
+    time_in = models.TimeField(blank=True, null=True)
+    time_out = models.TimeField(null=True, blank=True)
     entry_date = models.DateField(auto_now_add=True)
     on_site_status = models.BooleanField(default=True, null=True)
     over_stayed_status = models.BooleanField(default=False, null=True)
@@ -35,6 +34,7 @@ class AccessLog(models.Model):
     parking_time_limit = models.DateTimeField(blank=True)
     officers_name = models.CharField(max_length=50, default="", blank=True)
     created_on = models.DateTimeField(auto_now=True, null=True)
+    test = models.CharField(max_length=50, default="", blank=True)
     
 
 

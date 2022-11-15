@@ -38,7 +38,7 @@ def get_access_form_page(request):
         officers_name = request.POST.get('officers_name')
 
         time_in = request.POST.get('time_in')
-        time_out = request.POST.get('time_out')
+        time_out = None
         entry_date = request.POST.get('entry_date')
         parking_time_limit = request.POST.get('parking_time_limit')
         created_on = request.POST.get('created_on')
