@@ -126,3 +126,27 @@ canvas.addEventListener('pointermove', handlePointerMove, {passive: true});
 //     form.appendChild(image);
 //     clearPad();
 // })
+// ------------------------------------------
+// const imageURL = canvas.toDataURL();
+const formSignatureField = document.getElementById("signature")
+document.getElementById("confirm-signature").addEventListener("click", pasteDataURL);
+
+
+function pasteDataURL() {
+    
+    const imageURL = canvas.toDataURL();
+    const image = document.createElement('img');
+    image.src = imageURL;
+    image.height = canvas.height;
+    image.width = canvas.width;
+    image.style.display = 'block';
+    form.appendChild(image);
+    formSignatureField.value = imageURL
+    clearPad();
+    // formSignatureField.value = imageURL
+    // clearPad();
+    // document.getElementById("signature").style.backgroundColor = "lightblue";
+
+
+}
+

@@ -30,7 +30,7 @@ class AccessLog(models.Model):
     entry_date = models.DateField(auto_now_add=True)
     on_site_status = models.BooleanField(default=True, null=True)
     over_stayed_status = models.BooleanField(default=False, null=True)
-    signature = CloudinaryField('image', default='placeholder', null=True)
+    signature = models.CharField(max_length=10000, default="")
     parking_time_limit = models.DateTimeField(blank=True)
     officers_name = models.CharField(max_length=50, default="", blank=True)
     created_on = models.DateTimeField(auto_now=True, null=True)
