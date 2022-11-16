@@ -71,7 +71,7 @@
                             <div><strong>Entry Gate</strong></div>
                             <div><strong>Parking Expiration</strong></div>
                             <div><strong>Signature</strong></div>
-                            
+                            <div><strong>On Site Status</strong></div>
                         </div>
                         <div class="col-3">
                             <div>{{ item.created_on }}</div> 
@@ -79,8 +79,10 @@
                             <div>{{ item.registration }}</div>
                             <div>{{ item.officers_name }}</div>
                             <div>{{ item.gate_number }}</div>
-                            <div>{{ item.parking_time_limit }}</div> 
+                            <div>{{ item.parking_time_limit }}</div>
+                            
                             <div><img height="200px" width="320px" style="display: block;" src="{{item.signature}}"></div> 
+                            <div>{{ item.on_site_status }}</div>  
                         </div>
 
                         <div class="col-3">

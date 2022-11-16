@@ -149,4 +149,14 @@ function pasteDataURL() {
 
 
 }
+document.getElementById("get_status").addEventListener("click", testStatus);
+
+function testStatus() {
+    // let onSiteStatus = document.getElementById("status")
+    // if (onSiteStatus.innerText = "True") {
+    //     onSiteStatus.style.backgroundColor = "red";
+    // };
+    document.getElementById("status").style.color = "lightblue";
+
+}
 

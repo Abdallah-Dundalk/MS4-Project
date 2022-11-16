@@ -14,6 +14,11 @@ def get_access_log_page(request):
     context = {
         'items': items
     }
+    for item in items:
+        if item.time_out is None:
+            item.on_site_status = True
+        else:
+            item.on_site_status = False
     return render(request, 'access_log.html', context)
 
 
