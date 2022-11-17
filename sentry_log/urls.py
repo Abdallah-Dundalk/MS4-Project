@@ -15,12 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from deliverylog.views import get_home_page, get_access_log_page, get_access_form_page
+from deliverylog.views import get_home_page, get_access_log_page, get_access_form_page, get_roll_call_page
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', get_home_page, name='get_home_page'),
     path('access_log/', get_access_log_page, name='get_access_log'),
-    path('access_form/', get_access_form_page, name='get_access_form')
+    path('access_form/', get_access_form_page, name='get_access_form'),
+    path('roll_call/', get_roll_call_page, name='get_roll_call')
+
 ]

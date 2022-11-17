@@ -33,7 +33,7 @@ class AccessLog(models.Model):
     signature = models.CharField(max_length=10000, default="")
     parking_time_limit = models.DateTimeField(blank=True)
     officers_name = models.CharField(max_length=50, default="", blank=True)
-    created_on = models.DateTimeField(auto_now=True, null=True)
+    created_on = models.DateTimeField(auto_now_add=True, null=True)
     test = models.CharField(max_length=50, default="", blank=True)
     
 

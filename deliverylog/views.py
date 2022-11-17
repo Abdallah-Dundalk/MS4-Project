@@ -9,6 +9,15 @@ def get_home_page(request):
     return render(request, 'index.html')
 
 
+def get_roll_call_page(request):
+    items = AccessLog.objects.all().filter(on_site_status=False)
+    context = {
+        'items': items
+    }
+    
+    return render(request, 'roll_call.html', context)
+
+
 def get_access_log_page(request):
     items = AccessLog.objects.all()
     context = {
@@ -19,6 +28,7 @@ def get_access_log_page(request):
             item.on_site_status = True
         else:
             item.on_site_status = False
+            item.save()
     return render(request, 'access_log.html', context)
 
 
