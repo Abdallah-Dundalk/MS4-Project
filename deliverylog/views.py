@@ -1,5 +1,6 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import AccessLog
+from django.db.models import Q
 import base64
 
 # Create your views here.
@@ -63,3 +64,20 @@ def get_access_form_page(request):
 
         return redirect('get_access_log')
     return render(request, 'access_form.html')
+
+    
+def get_search_page(request):
+    first_name = request.POST.get('first_name')
+    company = request.POST.get('company')
+    items = AccessLog.objects.all().filter(Q(first_name=first_name) | Q(company=company))
+    context = {
+            'items': items
+        }
+    if request.method == 'POST':
+        first_name = request.POST.get('first_name')
+        company = request.POST.get('company')
+        items = AccessLog.objects.all().filter(Q(first_name=first_name) | Q(company=company) )
+        context = {
+            'items': items
+            }
+    return render(request, 'search_page.html', context)
