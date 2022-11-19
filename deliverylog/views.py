@@ -11,7 +11,7 @@ def get_home_page(request):
 
 
 def get_roll_call_page(request):
-    items = AccessLog.objects.all().filter(on_site_status=False)
+    items = AccessLog.objects.all().filter(on_site_status=True)
     context = {
         'items': items
     }
@@ -69,14 +69,14 @@ def get_access_form_page(request):
 def get_search_page(request):
     first_name = request.POST.get('first_name')
     company = request.POST.get('company')
-    items = AccessLog.objects.all().filter(Q(first_name=first_name) | Q(company=company))
+    items = AccessLog.objects.all().filter(Q(first_name__iexact=first_name) | Q(company__iexact=company))
     context = {
             'items': items
         }
     if request.method == 'POST':
         first_name = request.POST.get('first_name')
         company = request.POST.get('company')
-        items = AccessLog.objects.all().filter(Q(first_name=first_name) | Q(company=company) )
+        items = AccessLog.objects.all().filter(Q(first_name__iexact=first_name) | Q(company__iexact=company) )
         context = {
             'items': items
             }
