@@ -96,7 +96,6 @@
                             <div><strong>Granted Entry by:</strong></div>
                             <div><strong>Entry Gate</strong></div>
                             <div><strong>Parking Expiration</strong></div>
-                            <div><strong>Signature</strong></div>
                             <div><strong>On Site Status</strong></div>
                         </div>
                         <div class="col-3">
@@ -106,9 +105,8 @@
                             <div>{{ item.officers_name }}</div>
                             <div>{{ item.gate_number }}</div>
                             <div id="parking_time_limit{{item.id}}">{{ item.parking_time_limit|date:"G:i:s" }}</div>
-                            
-                            <div><img height="200px" width="320px" style="display: block;" src="{{item.signature}}"></div> 
                             <div>{{ item.on_site_status }}</div>  
+                            
                         </div>
 
                         <div class="col-3">
@@ -124,6 +122,17 @@
                             <div>{{ item.passenger_3 }}</div>
                             <div>{{ item.passenger_4 }}</div>
                         </div>
+                    </div>
+                    <div class="row border">
+                        <div class="col-4">
+                            <strong>Signature</strong>
+                        </div>
+                        <div class="col-4">
+                            <div><img height="200px" width="320px" style="display: block;" src="{{item.signature}}"></div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <a href="edit_log/{{item.id}}" class="btn btn-default">Edit</a>
                     </div>
                     
                      

@@ -2,52 +2,52 @@
 
 {% block content %}
 <div class="container">
-    <form method="POST" class="signature-pad-form">
+    <form method="POST" action="" class="signature-pad-form">
         {% csrf_token %}
         <!-- <div class="row">
             <div class="col m-md-1">
-                <label for="first_name">First Name:</label>
-                <input type="text" class="form-control" id="first_name" name="first_name">
+                <label for="id_first_name">First Name:</label>
+                <div>{{ form.first_name }}</div>
             </div>
             <div class="col m-md-1">
                 <label for="last_name">Last Name:</label>
-                <input type="text" class="form-control" id="last_name" name="last_name">
+                <div>{{ form.last_name }}</div>
             </div>
         </div>
         <div class="row">
             <div class="col m-md-1">
                 <label for="phone_number">Phone Number:</label>
-                <input type="number" class="form-control" id="phone_number" name="phone_number">
+                <div>{{ form.phone_number }}</div>
             </div>
             <div class="col m-md-1">
                 <label for="registration">Vehicle Registration:</label>
-                <input type="text" class="form-control" id="registration" name="registration">
+                <div>{{ form.registration }}</div>
             </div>
         </div>
         <div class="row">
             <div class="col m-md-1">
                 <label for="company">Company:</label>
-                <input type="text" class="form-control" id="company" name="company">
+                <div>{{ form.company }}</div>
             </div>
             <div class="col m-md-1">
                 <label for="destination">Destination:</label>
-                <input type="text" class="form-control" id="destination" name="destination">
+                <div>{{ form.destination }}</div>
             </div>
         </div>
         <div class="row">
             <div class="col m-md-1">
                 <label for="gate_number">Gate:</label>
-                <input type="number" class="form-control" id="gate_number" name="gate_number">
+                <div>{{ form.gate_number }}</div>
             </div>
             <div class="col m-md-1">
                 <label for="parking_time_limit">Parking Time Limit:</label>
-                <input type="time" class="form-control" id="parking_time_limit" name="parking_time_limit">
+                <div>{{ form.parking_time_limit }}</div>
             </div>
         </div>
         <div class="row">
             <div class="col m-md-1">
                 <label for="officers_name">Officer Name:</label>
-                <input type="text" class="form-control" id="officers_name" name="officers_name">
+                <div>{{ form.officers_name }}</div>
             </div>
             <div class="col m-md-1">
                 <div type="button" class="btn-sm pb-2 pt-2  btn-primary btn-block mt-4" data-bs-toggle="collapse"
@@ -58,66 +58,66 @@
                 <div class="row">
                     <div class="col m-md-1">
                         <label for="passenger1_first_name">Passenger 1 First Name:</label>
-                        <input type="text" class="form-control" id="passenger1_first_name" name="passenger1_first_name">
+                        <div>{{ form.passenger1_first_name }}</div>
                     </div>
                     <div class="col m-md-1">
                         <label for="passenger1_last_name">Passenger 1 Last Name:</label>
-                        <input type="text" class="form-control" id="passenger1_last_name" name="passenger1_last_name">
+                        <div>{{ form.passenger1_last_name }}</div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col m-md-1">
                         <label for="passenger2_first_name">Passenger 2 First Name:</label>
-                        <input type="text" class="form-control" id="passenger2_first_name" name="passenger2_first_name">
+                        <div>{{ form.passenger2_first_name }}</div>
                     </div>
                     <div class="col m-md-1">
                         <label for="passenger2_last_name">Passenger 2 Last Name:</label>
-                        <input type="text" class="form-control" id="passenger2_last_name" name="passenger2_last_name">
+                        <div>{{ form.passenger2_last_name }}</div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col m-md-1">
                         <label for="passenger3_first_name">Passenger 3 First Name:</label>
-                        <input type="text" class="form-control" id="passenger3_first_name" name="passenger3_first_name">
+                        <div>{{ form.passenger3_first_name }}</div>
                     </div>
                     <div class="col m-md-1">
                         <label for="passenger3_last_name">Passenger 3 Last Name:</label>
-                        <input type="text" class="form-control" id="passenger3_last_name" name="passenger3_last_name">
+                        <div>{{ form.passenger3_last_name }}</div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col m-md-1">
                         <label for="passenger4_first_name">Passenger 4 First Name:</label>
-                        <input type="date" class="form-control" id="passenger4_first_name" name="passenger4_first_name">
+                        <div>{{ form.passenger4_first_name }}</div>
                     </div>
                     <div class="col m-md-1">
                         <label for="passenger4_last_name">Passenger 4 Last Name:</label>
-                        <input type="date" class="form-control" id="passenger4_last_name" name="passenger4_last_name">
+                        <div>{{ form.passenger4_last_name }}</div>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col m-md-1">
                     <label for="entry_date">Date:</label>
-                    <input type="date" class="form-control" id="entry_date" name="entry_date">
+                    <div>{{ form.entry_date }}</div>
                 </div>
                 <div class="col m-md-1">
                     <label for="created_on">Created:</label>
-                    <input type="datetime-local" class="form-control" id="created_on" name="created_on" >
+                    <div>{{ form.created_on }}</div>
                 </div>
             </div>
             <div class="row">
                 <div class="col m-md-1">
                     <label for="time_in">Time In:</label>
-                    <input type="time" class="form-control" id="time_in" name="time_in">
+                    <div>{{ form.time_in }}</div>
                 </div>
                 <div class="col m-md-1">
                     <label for="time_out">Time Out:</label>
-                    <input type="time" class="form-control" id="time_out" name="time_out">
+                    <div>{{ form.time_out }}</div>
                 </div>
             </div>
             
-            
+             -->
             <div class="container border">
 
             
@@ -136,8 +136,8 @@
                 </div>
                 <div class="col-4">
                     <h1>Acknowledgement</h1>
-                    <p>I, the undersigned, understand and accept the site rules</p> -->
-                    {{ form }}
+                    <p>I, the undersigned, understand and accept the site rules</p>
+
                     <p>
                         <strong>Signature</strong>
                     </p>
@@ -159,6 +159,7 @@
 
             </div>
         </div>
+        {{form}}
     </form>
 
     

@@ -25,16 +25,16 @@ class AccessLog(models.Model):
     registration = models.CharField(max_length=20)
     company = models.CharField(max_length=50)
     destination = models.CharField(max_length=50)
-    time_in = models.TimeField(blank=True)
+    time_in = models.TimeField()
     time_out = models.TimeField(null=True, blank=True)
-    entry_date = models.DateField(auto_now_add=True)
+    entry_date = models.DateField()
     on_site_status = models.BooleanField(default=True, null=True)
     over_stayed_status = models.BooleanField(default=False, null=True)
-    signature = models.CharField(max_length=10000, default="")
-    parking_time_limit = models.TimeField(blank=True)
-    officers_name = models.CharField(max_length=50, default="", blank=True)
-    created_on = models.DateTimeField(auto_now_add=True, null=True)
-    test = models.CharField(max_length=50, default="", blank=True)
+    signature = models.CharField(max_length=10000)
+    parking_time_limit = models.TimeField()
+    officers_name = models.CharField(max_length=50, default="")
+    created_on = models.DateTimeField()
+   
     
 
 
