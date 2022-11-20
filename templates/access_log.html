@@ -30,7 +30,23 @@
         </div>
         
         {% for item in items %}
-        <div class="row border">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    {% for message in messages %}
+                    <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg"
+                    role="alert">
+                    {{ message | safe }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" >
+                    </button>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row border" id="log{{item.id}}">
             <div class="col-2">
                 {{ item.first_name}} {{item.last_name}}
             </div>
@@ -44,10 +60,10 @@
                 {{ item.entry_date}}
             </div>
             <div class="col-2">
-                {{ item.time_in}}
+                {{ item.time_in|date:"G:i:s"}}
             </div>
-            <div class="col-2">
-                {{ item.time_out}}
+            <div class="col-2" id="time_out{{item.id}}">
+                {{ item.time_out|date:"G:i:s"}}
             </div>
             <div class="form-check form-switch col-1">
                 <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
@@ -58,6 +74,16 @@
                     data-bs-target="#collapse-target{{item.id}}" aria-expanded="false" aria-controls="collapse-target">
                     More
                 </button>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div id="timeDifference{{item.id}}"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div id="timer{{item.id}}"></div>
+                </div>
             </div>
             <div class="collapse" id="collapse-target{{item.id}}">
                 <div class="card card-body">
@@ -79,7 +105,7 @@
                             <div>{{ item.registration }}</div>
                             <div>{{ item.officers_name }}</div>
                             <div>{{ item.gate_number }}</div>
-                            <div>{{ item.parking_time_limit }}</div>
+                            <div id="parking_time_limit{{item.id}}">{{ item.parking_time_limit|date:"G:i:s" }}</div>
                             
                             <div><img height="200px" width="320px" style="display: block;" src="{{item.signature}}"></div> 
                             <div>{{ item.on_site_status }}</div>  
@@ -104,7 +130,96 @@
                 </div>
             </div>
         </div>
-        
+        <!-- <script>
+            setTimeout(function() {
+                let time_out = document.getElementById("time_out{{item.id}}").value
+                let parking_expiraton_time = document.getElementById("parking_time_limit{{item.id}}").value
+                let time_now = new Date().toLocaleTimeString();
+                let trigger = parking_expiraton_time - time_now;
+                let messages = document.getElementById("msg");
+                let alert = new bootstrap.Alert(messages);
+                alert.close();
+            }, trigger)
+        </script> -->
+
+        <script>
+            // function timeFunction() {
+            //     const getSeconds = s => s.split(":").reduce((acc, curr) => acc * 60 + +curr, 0);
+            //     let parkingExpiryInSeconds = getSeconds(document.getElementById("parking_time_limit{{item.id}}").innerHTML);
+                
+            //     let today = new Date();
+            //     let timeNow = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            //     let timeNowInSeconds = getSeconds(timeNow)
+
+            //     let res = Math.abs(parkingExpiryInSeconds - timeNowInSeconds);
+            //     console.log(parkingExpiryInSeconds);
+            //     console.log(timeNowInSeconds);
+
+            //     let hours = Math.floor(res / 3600);
+
+            //     let minutes = Math.floor(res % 3600 / 60);
+
+            //     let seconds = res % 60;
+            //     document.getElementById("timeDifference{{item.id}}").innerHTML = hours + ":" + minutes + ":" + seconds;
+            // }
+
+            function overStayedAlarm() {
+                document.getElementById('log{{item.id}}').style.backgroundColor="orange";
+                document.getElementById("timer{{item.id}}").innerHTML = "Over Stayed";
+            }
+
+            function parentCountdown () {
+                const getSeconds = s => s.split(":").reduce((acc, curr) => acc * 60 + +curr, 0);
+                let parkingExpiryInSeconds = getSeconds(document.getElementById("parking_time_limit{{item.id}}").innerHTML);
+                
+                let today = new Date();
+                let timeNow = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+                let timeNowInSeconds = getSeconds(timeNow)
+
+                let res = Math.abs(parkingExpiryInSeconds - timeNowInSeconds);
+                console.log(parkingExpiryInSeconds);
+                console.log(timeNowInSeconds);
+
+                let hours = Math.floor(res / 3600);
+
+                let minutes = Math.floor(res % 3600 / 60);
+
+                let seconds = res % 60;
+                
+                
+                let timeRemaining = res;
+                let timerElement = document.getElementById("timer{{item.id}}");
+                    
+                let timerInterval = setInterval(countdown, 1000); 
+                
+                    function countdown() {
+                        
+                         
+                        let exit_time = document.getElementById("time_out{{item.id}}".innerHTML);
+
+                        if (timeRemaining <= -1 && exit_time == null || timeNowInSeconds >= parkingExpiryInSeconds && exit_time == null ) {
+                            clearInterval(timerInterval);
+                            document.getElementById("timer{{item.id}}").value = -1 - timeRemaining;
+                            timeRemaining -= 1;
+                            console.log("overstayed")
+                            document.getElementById("timer{{item.id}}").innerHTML = "Over stayed"
+                            document.getElementById("log{{item.id}}").style.backgroundColor = "red"
+                            
+                        // } else if (timeRemaining <= -1 && exit_time != null ) {
+                        //     clearInterval(timerInterval);
+                        //     document.getElementById("timer").value = -1 - timeRemaining;
+                        //     timeRemaining -= 1;
+                        //     console.log("do nothing")
+                        } else if (parkingExpiryInSeconds >= timeNowInSeconds ) {
+                            timerElement.innerText = timeRemaining + " seconds until expiry...";
+                            timeRemaining --;
+                            console.log("normal operation")
+                    }
+                }
+            }
+            // timeFunction()
+            parentCountdown ()
+        </script>
         
         {% endfor %}
     

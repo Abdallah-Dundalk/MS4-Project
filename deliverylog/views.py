@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import AccessLog
 from django.db.models import Q
+from django.contrib import messages
 import base64
 
 # Create your views here.
@@ -80,4 +81,5 @@ def get_search_page(request):
         context = {
             'items': items
             }
+        messages.success(request, 'Comment posted')
     return render(request, 'search_page.html', context)
