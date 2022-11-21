@@ -30,11 +30,18 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
+                       
+                        {% if user.is_authenticated %}
                         <li class="nav-item"><a class="nav-link" href="{% url 'get_access_form' %}">Access Form</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'get_access_log' %}">Access Log</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'get_roll_call' %}">Roll Call</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'get_search_page' %}">Search Page</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Log In</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'account_logout' %}">Logout</a></li>
+                        {% else %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'account_login' %}">Login</a></li>
+                        {% endif %}
+                        
                     </ul>
                 </div>
             </div>

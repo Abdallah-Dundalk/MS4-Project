@@ -14,6 +14,7 @@ class AccessForm(forms.ModelForm):
             'created_on': DateTimePickerInput(),
             'time_in': TimePickerInput(),
             'time_out': TimePickerInput(),
+            'parking_time_limit': TimePickerInput(),
             'entry_date': DatePickerInput()
         }
 

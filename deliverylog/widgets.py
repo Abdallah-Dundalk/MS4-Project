@@ -10,4 +10,4 @@ class TimePickerInput(forms.TimeInput):
     
 
 class DateTimePickerInput(forms.DateTimeInput):
-    input_type = 'datetime'
+    input_type = 'datetime-local'
