@@ -43,7 +43,6 @@ def get_access_form_page(request):
             print("form saved")
             return redirect('get_access_log')
 
- 
     form = AccessForm()
     context = {
         'form': form
