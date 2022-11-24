@@ -31,8 +31,6 @@
                 <strong>More Info</strong>
             </div>
         </div>
-        
-        {% for item in items %}
         <div class="container">
             <div class="row">
                 <div class="col-md-8 offset-md-2">
@@ -47,6 +45,8 @@
                 </div>
             </div>
         </div>
+        {% for item in items %}
+        
 
 
         <div class="row border" id="log{{item.id}}">
@@ -69,8 +69,8 @@
                 {{ item.time_out|date:"G:i:s"}}
             </div>
             <div class="btn-group col-2" role="group" aria-label="...">
-                <button type="button" class="btn btn-primary w-100">In</button>
-                <button type="button" class="btn btn-primary">Out</button>
+                <button type="button" name="in" class="btn btn-primary w-100">In</button>
+                <button type="button" name="out" class="btn btn-primary"><a href="edit_time_out/{{item.id}}">Out</a></button>
               </div>
               <div class="col-2">
                 <button class="btn btn-sm w-100 text-center btn-primary" type="button" data-bs-toggle="collapse"
@@ -138,10 +138,16 @@
                             <div><img height="200px" width="320px" style="display: block;" src="{{item.signature}}"></div>
                         </div>
                     </div>
+                    
+                    
+                    {% if request.user.is_staff %}
                     <div class="col-4">
                         <a href="edit_log/{{item.id}}" class="btn btn-warning">Edit</a>
                     </div>
-                    
+                    {% endif %}
+
+
+
                      
                 </div>
             </div>

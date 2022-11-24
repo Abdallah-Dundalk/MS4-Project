@@ -4,6 +4,7 @@ from django.db.models import Q
 from django.contrib import messages
 from .forms import AccessForm
 import base64
+import datetime
 
 # Create your views here.
 
@@ -32,8 +33,9 @@ def get_access_log_page(request):
         else:
             item.on_site_status = False
             item.save()
-    return render(request, 'access_log.html', context)
 
+    return render(request, 'access_log.html', context)
+   
 
 def get_access_form_page(request):
     if request.method == 'POST':
@@ -41,7 +43,9 @@ def get_access_form_page(request):
         if form.is_valid():
             form.save()
             print("form saved")
+            
             return redirect('get_access_log')
+    messages.success(request, 'Delivery successfully logged.')
 
     form = AccessForm()
     context = {
@@ -81,3 +85,28 @@ def edit_log_page(request, item_id):
         'form': form
     }
     return render(request, 'edit_log.html', context)
+
+    #  if request.method == 'POST' and 'default-submit-button' in request.POST:
+    #     form = AccessForm(request.POST)
+    #     if form.is_valid():
+    #         form.save()
+    #         print("form saved")
+    #         return redirect('get_access_log')
+    # return render(request, 'access_log.html', context)
+
+
+def edit_time_out_page(request, item_id):
+    item = get_object_or_404(AccessLog, id=item_id)
+    if request.method == 'POST' and 'time-out-submit-btn' in request.POST:
+        item.time_out = datetime.datetime.now()
+        item.save()
+        # form = AccessForm(request.POST, instance=item)
+        # if form.is_valid():
+        #     form.save()
+        print("yeah")
+        return redirect('get_access_log')
+    # form = AccessForm(instance=item)
+    # context = {
+    #     'form': form
+    # }
+    return render(request, 'edit_time_out.html')

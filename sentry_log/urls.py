@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from deliverylog.views import get_home_page, get_access_log_page, get_access_form_page, get_roll_call_page, get_search_page, edit_log_page
+from deliverylog.views import get_home_page, get_access_log_page, get_access_form_page, get_roll_call_page, get_search_page, edit_log_page, edit_time_out_page
 
 
 urlpatterns = [
@@ -26,5 +26,6 @@ urlpatterns = [
     path('roll_call/', get_roll_call_page, name='get_roll_call'),
     path('search_page/', get_search_page, name='get_search_page'),
     path('access_log/edit_log/<item_id>/', edit_log_page, name='edit_log'),
+    path('access_log/edit_time_out/<item_id>/', edit_time_out_page, name='edit_time_out_page'),
     path('accounts/', include('allauth.urls'))
 ]
