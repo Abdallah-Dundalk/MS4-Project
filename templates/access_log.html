@@ -88,10 +88,11 @@
             </div>
             <div class="btn-group col-md-2" role="group" aria-label="...">
                 <button type="button" name="in" class="btn btn-primary w-100">In</button>
-                <button type="button" name="out" class="btn btn-primary w-100"><a href="edit_time_out/{{item.id}}">Out</a></button>
-              </div>
-              <div class="col-md-8 d-xl-none"></div>
-              <div class="col-md-2">
+                <button type="button" name="out" class="btn btn-primary w-100"><a
+                        href="edit_time_out/{{item.id}}">Out</a></button>
+            </div>
+            <div class="col-md-8 d-xl-none"></div>
+            <div class="col-md-2">
                 <button class="btn btn-sm w-100 text-center btn-primary" type="button" data-bs-toggle="collapse"
                     data-bs-target="#collapse-target{{item.id}}" aria-expanded="false" aria-controls="collapse-target">
                     More
@@ -104,18 +105,18 @@
                 <div class="col-md-8">
                     <div id="timer{{item.id}}"></div>
                 </div>
-                
-            
+
+
             </div>
-            
-            
-                
-            
+
+
+
+
             <div class="collapse" id="collapse-target{{item.id}}">
                 <div class="card card-body">
                     <div class="row">
                         <div class="col-3">
-               
+
                             <div><strong>Record Created:</strong></div>
                             <div><strong>Phone number:</strong></div>
                             <div><strong>Registration Number:</strong></div>
@@ -125,14 +126,14 @@
                             <div><strong>On Site Status</strong></div>
                         </div>
                         <div class="col-3">
-                            <div>{{ item.created_on }}</div> 
-                            <div>{{ item.phone_number }}</div> 
+                            <div>{{ item.created_on }}</div>
+                            <div>{{ item.phone_number }}</div>
                             <div>{{ item.registration }}</div>
                             <div>{{ item.officers_name }}</div>
                             <div>{{ item.gate_number }}</div>
                             <div id="parking_time_limit{{item.id}}">{{ item.parking_time_limit|date:"G:i:s" }}</div>
-                            <div>{{ item.on_site_status }}</div>  
-                            
+                            <div>{{ item.on_site_status }}</div>
+
                         </div>
 
                         <div class="col-3">
@@ -154,11 +155,12 @@
                             <strong>Signature</strong>
                         </div>
                         <div class="col-4">
-                            <div><img height="200px" width="320px" style="display: block;" src="{{item.signature}}"></div>
+                            <div><img height="200px" width="320px" style="display: block;" src="{{item.signature}}">
+                            </div>
                         </div>
                     </div>
-                    
-                    
+
+
                     {% if request.user.is_staff %}
                     <div class="col-4">
                         <a href="edit_log/{{item.id}}" class="btn btn-warning">Edit</a>
@@ -167,7 +169,7 @@
 
 
 
-                     
+
                 </div>
             </div>
         </div>

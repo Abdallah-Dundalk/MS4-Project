@@ -48,58 +48,81 @@
             </div>
         </div>
         <div class="row border">
-            <div class="col-2">
+            <div class="col-2 d-none d-xl-block">
                 <strong>Name</strong>
             </div>
-            <div class="col-1">
+            <div class="col-1 d-none d-xl-block">
                 <strong>Company</strong>
             </div>
-            <div class="col-1">
+            <div class="col-1 d-none d-xl-block">
                 <strong>Destination</strong>
             </div>
-            <div class="col-2">
+            <div class="col-2 d-none d-xl-block">
                 <strong>Entry Date</strong>
             </div>
-            <div class="col-2">
+            <div class="col-1 d-none d-xl-block">
                 <strong>Time In</strong>
             </div>
-            <div class="col-2">
+            <div class="col-1 d-none d-xl-block">
                 <strong>Time Out</strong>
             </div>
-            <div class="col-1">
-               <strong>Off Site</strong>
+            <div class="col-1 text-center d-none d-xl-block">
+               <strong>On Site</strong>
             </div>
-            <div class="col-1">
+            <div class="col-1 text-center d-none d-xl-block">
+                <strong>Off Site</strong>
+             </div>
+            <div class="col-2 text-center d-none d-xl-block">
                 <strong>More Info</strong>
             </div>
         </div>
         
         {% for item in items %}
         <div class="row border">
-            <div class="col-2">
+            <div class="col-6 d-xl-none">
+                Name
+            </div>
+            <div class="col-6 col-xl-2">
                 {{ item.first_name}} {{item.last_name}}
             </div>
-            <div class="col-1">
+            <div class="col-6 d-xl-none">
+                Company
+            </div>
+            <div class="col-6 col-xl-1">
                 {{ item.company}}
             </div>
-            <div class="col-1">
+            <div class="col-6 d-xl-none">
+                Destination
+            </div>
+            <div class="col-6 col-xl-1">
                 {{ item.destination}}
             </div>
-            <div class="col-2">
+            <div class="col-6 d-xl-none">
+                Entry Date
+            </div>
+            <div class="col-6 col-xl-2">
                 {{ item.entry_date}}
             </div>
-            <div class="col-2">
-                {{ item.time_in}}
+            <div class="col-6 d-xl-none">
+                Time In
             </div>
-            <div class="col-2">
-                {{ item.time_out}}
+            <div class="col-6 col-xl-1">
+                {{ item.time_in|date:"G:i"}}
             </div>
-            <div class="form-check form-switch col-1">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-                <label class="form-check-label" for="flexSwitchCheckChecked"></label>
+            <div class="col-6 d-xl-none">
+                Time Out
             </div>
-            <div class="col-1">
-                <button class="btn btn-sm" type="button" data-bs-toggle="collapse"
+            <div class="col-6 col-xl-1" id="time_out{{item.id}}">
+                {{ item.time_out|date:"G:i"}}
+            </div>
+            <div class="btn-group col-md-2" role="group" aria-label="...">
+                <button type="button" name="in" class="btn btn-primary w-100">In</button>
+                <button type="button" name="out" class="btn btn-primary w-100"><a
+                        href="edit_time_out/{{item.id}}">Out</a></button>
+            </div>
+            <div class="col-md-8 d-xl-none"></div>
+            <div class="col-md-2">
+                <button class="btn btn-sm w-100 text-center btn-primary" type="button" data-bs-toggle="collapse"
                     data-bs-target="#collapse-target{{item.id}}" aria-expanded="false" aria-controls="collapse-target">
                     More
                 </button>
