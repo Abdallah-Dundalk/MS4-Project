@@ -107,8 +107,12 @@ def edit_time_out_page(request, item_id):
         #     form.save()
         print("yeah")
         return redirect('get_access_log')
-    # form = AccessForm(instance=item)
-    # context = {
-    #     'form': form
-    # }
-    return render(request, 'edit_time_out.html')
+    elif request.method == 'POST' and 'time-out-cancel-btn' in request.POST:
+        print("yeah")
+        return redirect('get_access_log')
+    form = AccessForm(instance=item)
+    context = {
+        
+        'item': item
+    }
+    return render(request, 'edit_time_out.html', context)
