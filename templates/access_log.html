@@ -3,31 +3,31 @@
 {% block content %}
     <div class="container bg-success border">
         <div class="row border">
-            <div class="col-2 d-none d-xl-block">
+            <div class="col-2 d-none d-xl-block my-lg-3 mb-4">
                 <strong>Name</strong>
             </div>
-            <div class="col-1 d-none d-xl-block">
+            <div class="col-1 d-none d-xl-block my-lg-3 mb-4">
                 <strong>Company</strong>
             </div>
-            <div class="col-1 d-none d-xl-block">
+            <div class="col-1 d-none d-xl-block my-lg-3 mb-4">
                 <strong>Destination</strong>
             </div>
-            <div class="col-2 d-none d-xl-block">
+            <div class="col-2 d-none d-xl-block my-lg-3 mb-4">
                 <strong>Entry Date</strong>
             </div>
-            <div class="col-1 d-none d-xl-block">
+            <div class="col-1 d-none d-xl-block my-lg-3 mb-4">
                 <strong>Time In</strong>
             </div>
-            <div class="col-1 d-none d-xl-block">
+            <div class="col-1 d-none d-xl-block my-lg-3 mb-4">
                 <strong>Time Out</strong>
             </div>
-            <div class="col-1 text-center d-none d-xl-block">
+            <div class="col-1 text-center d-none d-xl-block my-lg-3 mb-4">
                <strong>On Site</strong>
             </div>
-            <div class="col-1 text-center d-none d-xl-block">
+            <div class="col-1 text-center d-none d-xl-block my-lg-3 mb-4">
                 <strong>Off Site</strong>
              </div>
-            <div class="col-2 text-center d-none d-xl-block">
+            <div class="col-2 text-center d-none d-xl-block my-lg-3 mb-4">
                 <strong>More Info</strong>
             </div>
         </div>
@@ -50,40 +50,40 @@
 
 
         <div class="row border" id="log{{item.id}}">
-            <div class="col-6 d-xl-none">
-                Name
+            <div class="col-6 col-xl-2 d-xl-none mt-3">
+                <strong>Names </strong>
             </div>
-            <div class="col-6 col-xl-2">
+            <div class="col-6 col-xl-2 col-xl-2 mt-3 my-lg-">
                 {{ item.first_name}} {{item.last_name}}
             </div>
-            <div class="col-6 d-xl-none">
-                Company
+            <div class="col-6 col-xl-1 d-xl-none mt-3 ">
+                <strong>Company</strong>
             </div>
-            <div class="col-6 col-xl-1">
+            <div class="col-6 col-xl-1 mt-3 my-lg-3 ">
                 {{ item.company}}
             </div>
-            <div class="col-6 d-xl-none">
-                Destination
+            <div class="col-6 col-xl-1 d-xl-none mt-3 ">
+                <strong>Destination</strong>
             </div>
-            <div class="col-6 col-xl-1">
+            <div class="col-6 col-xl-1  mt-3 my-lg-3 ">
                 {{ item.destination}}
             </div>
-            <div class="col-6 d-xl-none">
-                Entry Date
+            <div class="col-6 col-xl-2 d-xl-none mt-3 ">
+                <strong>Entry Date</strong>
             </div>
-            <div class="col-6 col-xl-2">
+            <div class="col-6 col-xl-2  mt-3 my-lg-3 ">
                 {{ item.entry_date|date:"d/m/y"}}
             </div>
-            <div class="col-6 d-xl-none">
-                Time In
+            <div class="col-6 col-xl-1 d-xl-none mt-3 ">
+                <strong>Time In </strong>
             </div>
-            <div class="col-6 col-xl-1">
+            <div class="col-6 col-xl-1  mt-3 my-lg-3 ">
                 {{ item.time_in|date:"G:i"}}
             </div>
-            <div class="col-6 d-xl-none">
-                Time Out
+            <div class="col-6 col-xl-1 d-xl-none mt-3">
+                <strong>Time</strong>
             </div>
-            <div class="col-6 col-xl-1" id="time_out{{item.id}}">
+            <div class="col-6 col-xl-1  mt-3 my-lg-2 " id="time_out{{item.id}}">
                 {{ item.time_out|date:"G:i"}}
             </div>
             <div class="btn-group col-md-2" role="group" aria-label="...">
@@ -99,9 +99,6 @@
                 </button>
             </div>
             <div class="row">
-                <div class="col-md-2">
-                    <div id="timeDifference{{item.id}}">Test</div>
-                </div>
                 <div class="col-md-8">
                     <div id="timer{{item.id}}"></div>
                 </div>
@@ -115,47 +112,103 @@
             <div class="collapse" id="collapse-target{{item.id}}">
                 <div class="card card-body">
                     <div class="row">
-                        <div class="col-3">
+                        <div class="col-6 col-xl-2 my-lg-3 mb-4">
+                            <strong>Record Created:</strong>
+                        </div>
+                        <div class="col-6 col-xl-2 my-lg-3 mb-4">
+                            <div>{{ item.created_on|date:"d/m/y - G:i" }}</div>
+                        </div>
+                        <div class="col-6 col-xl-2 my-lg-3 mb-4">
+                            <strong>Phone Number:</strong>
+                        </div>
+                        <div class="col-6 col-xl-2 my-lg-3 mb-4">
+                            <div>{{ item.phone_number }}</div>
+                        </div>
+                        <div class="col-6 col-xl-2 my-lg-3 mb-4">
+                            <strong>Registration Number:</strong>
+                        </div>
+                        <div class="col-6 col-xl-2 my-lg-3 mb-4">
+                            <div>{{ item.registration}}</div>
+                        </div>
+                        <div class="col-6 col-xl-2 my-lg-3 mb-4">
+                            <strong>Granted Entry by:</strong>
+                        </div>
+                        <div class="col-6 col-xl-2 my-lg-3 mb-4">
+                            <div>{{ item.officers_name }}</div>
+                        </div>
+                        <div class="col-6 col-xl-2 my-lg-3 mb-4">
+                            <strong>Entry Gate:</strong>
+                        </div>
+                        <div class="col-6 col-xl-2 my-lg-3 mb-4">
+                            <div>{{ item.gate_number }}</div>
+                        </div>
+                        <div class="col-6 col-xl-2 my-lg-3 mb-4">
+                            <strong>Entry Gate:</strong>
+                        </div>
+                        <div class="col-6 col-xl-2 my-lg-3 mb-4">
+                            <div>{{ item.gate_number }}</div>
+                        </div>
+                        <div class="col-6 col-xl-2 my-lg-3 mb-4">
+                            <strong>Parking Expiration:</strong>
+                        </div>
+                        <div class="col-6 col-xl-2 my-lg-3 mb-4">
+                            <div id="parking_time_limit{{item.id}}">{{ item.parking_time_limit|date:"G:i:s"}}</div>
+                        </div>
+                    </div>
 
-                            <div><strong>Record Created:</strong></div>
-                            <div><strong>Phone number:</strong></div>
+
+
+<!-- 
+                    <div class="row">
+
+                        
+
+
+
+
+
+                        <div class="col-md-3">
+
+                            
+                            <div></div>
                             <div><strong>Registration Number:</strong></div>
-                            <div><strong>Granted Entry by:</strong></div>
+                            <div><strong></strong></div>
                             <div><strong>Entry Gate</strong></div>
                             <div><strong>Parking Expiration</strong></div>
                             <div><strong>On Site Status</strong></div>
                         </div>
-                        <div class="col-3">
+                        
+                        <div class="col-md-3">
                             <div>{{ item.created_on|date:"d/m/y - G:i" }}</div>
                             <div>{{ item.phone_number }}</div>
                             <div>{{ item.registration }}</div>
                             <div>{{ item.officers_name }}</div>
                             <div>{{ item.gate_number }}</div>
-                            <div id="parking_time_limit{{item.id}}">{{ item.parking_time_limit|date:"G:i" }}</div>
+                            <div id="parking_time_limit{{item.id}}">{{ item.parking_time_limit|date:"G:i:s"}}</div>
                             <div>{{ item.on_site_status }}</div>
 
                         </div>
 
-                        <div class="col-3">
+                        <div class="col-md-3">
                             <div><strong>Passenger 1</strong></div>
                             <div><strong>Passenger 2</strong></div>
                             <div><strong>Passenger 3</strong></div>
                             <div><strong>Passenger 4</strong></div>
                         </div>
 
-                        <div class="col-3">
+                        <div class="col-md-3">
                             <div>{{ item.passenger_1 }}</div>
                             <div>{{ item.passenger_2 }}</div>
                             <div>{{ item.passenger_3 }}</div>
                             <div>{{ item.passenger_4 }}</div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="row border">
-                        <div class="col-4">
+                        <div class="col-md-4">
                             <strong>Signature</strong>
                         </div>
-                        <div class="col-4">
-                            <div><img height="200px" width="320px" style="display: block;" src="{{item.signature}}">
+                        <div class="col-md-4">
+                            <div><img height="200px" width="260px" style="display: block;" src="{{item.signature}}">
                             </div>
                         </div>
                     </div>
@@ -212,7 +265,7 @@
             // }
 
             function overStayedAlarm() {
-                document.getElementById('log{{item.id}}').style.backgroundColor="orange";
+                document.getElementById('log{{item.id}}').style.backgroundColor="blue";
                 document.getElementById("timer{{item.id}}").innerHTML = "Over Stayed";
             }
 
@@ -249,9 +302,9 @@
                             clearInterval(timerInterval);
                             document.getElementById("timer{{item.id}}").value = -1 - timeRemaining;
                             timeRemaining -= 1;
-                            console.log("overstayed")
+                            
                             document.getElementById("timer{{item.id}}").innerHTML = "Over stayed"
-                            document.getElementById("log{{item.id}}").style.backgroundColor = "red"
+                            document.getElementById("log{{item.id}}").style.backgroundColor = "blue"
                             
                         // } else if (timeRemaining <= -1 && exit_time != null ) {
                         //     clearInterval(timerInterval);
@@ -259,7 +312,7 @@
                         //     timeRemaining -= 1;
                         //     console.log("do nothing")
                         } else if (parkingExpiryInSeconds >= timeNowInSeconds ) {
-                            timerElement.innerText = timeRemaining + " seconds until expiry...";
+                            timerElement.innerText = Math.round(timeRemaining / 60)  + "minutes until expirey...";
                             timeRemaining --;
                             console.log("normal operation")
                     }
