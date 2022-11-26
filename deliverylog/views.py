@@ -43,15 +43,14 @@ def get_access_form_page(request):
         if form.is_valid():
             form.save()
             print("form saved")
+            messages.success(request, 'Delivery successfully logged.')
             
             return redirect('get_access_log')
-    messages.success(request, 'Delivery successfully logged.')
-
     form = AccessForm()
     context = {
         'form': form
     }
-    
+
     return render(request, 'access_form.html', context)
 
     
