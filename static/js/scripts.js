@@ -128,7 +128,7 @@ canvas.addEventListener('pointermove', handlePointerMove, {passive: true});
 // })
 // ------------------------------------------
 // const imageURL = canvas.toDataURL();
-const formSignatureField = document.getElementById("signature")
+const formSignatureField = document.getElementById("id_signature")
 document.getElementById("confirm-signature").addEventListener("click", pasteDataURL);
 
 
@@ -140,7 +140,7 @@ function pasteDataURL() {
     image.height = canvas.height;
     image.width = canvas.width;
     image.style.display = 'block';
-    form.appendChild(image);
+    // form.appendChild(image);
     formSignatureField.value = imageURL
     clearPad();
     // formSignatureField.value = imageURL
