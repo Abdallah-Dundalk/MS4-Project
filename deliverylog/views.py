@@ -87,6 +87,7 @@ def edit_log_page(request, item_id):
         'form': form
     }
     return render(request, 'edit_log.html', context)
+    
 
     #  if request.method == 'POST' and 'default-submit-button' in request.POST:
     #     form = AccessForm(request.POST)
@@ -116,3 +117,20 @@ def edit_time_out_page(request, item_id):
         'item': item
     }
     return render(request, 'edit_time_out.html', context)
+
+
+def delete_log_page(request, item_id):
+    item = get_object_or_404(AccessLog, id=item_id)
+    if request.method == 'POST' and 'delete-btn' in request.POST:
+        item.delete()
+        print("deleted")
+        return redirect('get_access_log')
+    elif request.method == 'POST' and 'cancel-btn' in request.POST:
+        print("cancelled")
+        return redirect('get_access_log')
+    form = AccessForm(instance=item)
+    context = {
+        
+        'item': item
+    }
+    return render(request, 'delete_record.html', context)

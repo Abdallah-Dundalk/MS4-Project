@@ -162,8 +162,13 @@
 
 
                     {% if request.user.is_staff %}
-                    <div class="col-4">
-                        <a href="edit_log/{{item.id}}" class="btn btn-warning">Edit</a>
+                    <div class="row">
+                        <div class="col text-center m-4">
+                            <a href="edit_log/{{item.id}}" class="btn btn-warning">Edit</a>
+                        </div>
+                        <div class="col text-center m-4">
+                            <a href="delete_log/{{item.id}}" class="btn btn-danger">Del</a>
+                        </div>
                     </div>
                     {% endif %}
 

@@ -15,17 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from deliverylog.views import get_home_page, get_access_log_page, get_access_form_page, get_roll_call_page, get_search_page, edit_log_page, edit_time_out_page
+from deliverylog import views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', get_home_page, name='get_home_page'),
-    path('access_log/', get_access_log_page, name='get_access_log'),
-    path('access_form/', get_access_form_page, name='get_access_form'),
-    path('roll_call/', get_roll_call_page, name='get_roll_call'),
-    path('search_page/', get_search_page, name='get_search_page'),
-    path('access_log/edit_log/<item_id>/', edit_log_page, name='edit_log'),
-    path('access_log/edit_time_out/<item_id>/', edit_time_out_page, name='edit_time_out_page'),
+    path('', views.get_home_page, name='get_home_page'),
+    path('access_log/', views.get_access_log_page, name='get_access_log'),
+    path('access_form/', views.get_access_form_page, name='get_access_form'),
+    path('roll_call/', views.get_roll_call_page, name='get_roll_call'),
+    path('search_page/', views.get_search_page, name='get_search_page'),
+    path('access_log/edit_log/<item_id>/', views.edit_log_page, name='edit_log'),
+    path('access_log/edit_time_out/<item_id>/', views.edit_time_out_page, name='edit_time_out_page'),
+    path('access_log/delete_log/<item_id>/', views.delete_log_page, name='delete_log'),
     path('accounts/', include('allauth.urls'))
 ]
