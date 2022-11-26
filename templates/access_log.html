@@ -72,7 +72,7 @@
                 Entry Date
             </div>
             <div class="col-6 col-xl-2">
-                {{ item.entry_date}}
+                {{ item.entry_date|date:"d/m/y"}}
             </div>
             <div class="col-6 d-xl-none">
                 Time In
@@ -126,12 +126,12 @@
                             <div><strong>On Site Status</strong></div>
                         </div>
                         <div class="col-3">
-                            <div>{{ item.created_on }}</div>
+                            <div>{{ item.created_on|date:"d/m/y - G:i" }}</div>
                             <div>{{ item.phone_number }}</div>
                             <div>{{ item.registration }}</div>
                             <div>{{ item.officers_name }}</div>
                             <div>{{ item.gate_number }}</div>
-                            <div id="parking_time_limit{{item.id}}">{{ item.parking_time_limit|date:"G:i:s" }}</div>
+                            <div id="parking_time_limit{{item.id}}">{{ item.parking_time_limit|date:"G:i" }}</div>
                             <div>{{ item.on_site_status }}</div>
 
                         </div>
