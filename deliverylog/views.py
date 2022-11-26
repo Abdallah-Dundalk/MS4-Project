@@ -69,7 +69,10 @@ def get_search_page(request):
         context = {
             'items': items
             }
-        messages.success(request, 'Comment posted')
+        if items:
+            messages.info(request, 'Records found')
+        else:
+            messages.success(request, 'No records found')
     return render(request, 'search_page.html', context)
 
 
