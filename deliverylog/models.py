@@ -28,6 +28,7 @@ class AccessLog(models.Model):
     time_in = models.TimeField()
     time_out = models.TimeField(null=True, blank=True)
     entry_date = models.DateField()
+    exit_date = models.DateField(null=True, blank=True)
     on_site_status = models.BooleanField(default=True, null=True)
     over_stayed_status = models.BooleanField(default=False, null=True)
     signature = models.CharField(max_length=10000)

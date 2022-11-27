@@ -128,13 +128,14 @@ function pasteDataURL() {
     image.style.display = 'block';
    
     formSignatureField.value = imageURL
-    clearPad();
+    // clearPad();
 }
 
 function formSubmitAlert() {
-    if (formSignatureField.innerText == "")
+    if (formSignatureField.value.length == 0)
     alert("Ensure all fields have been completed. You must press 'Confirm Signature' before pressing 'Submit'.");
   }
+
 
 document.getElementById("get_status").addEventListener("click", testStatus);
 
