@@ -84,9 +84,9 @@
                 {{ item.time_out|date:"G:i"}}
             </div>
             <div class="col-md-4 col-xl-2 my-3" role="group" aria-label="...">
-                <button type="button" name="out" class="btn btn-primary w-100">Check Out<a
-                        href="edit_time_out/{{item.id}}"></a></button>
+                <a href="edit_time_out/{{item.id}}" class="btn btn btn-primary w-100" role="button" aria-disabled="true">Check Out</a>
             </div>
+            
             <div class="col-md-4 col-lg-4 d-xl-none"></div>
             <div class="col-md-4 col-xl-2">
                 <button class="btn btn-sm w-100 text-center btn-primary my-3" type="button" data-bs-toggle="collapse"

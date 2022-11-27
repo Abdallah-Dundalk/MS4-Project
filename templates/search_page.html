@@ -1,20 +1,7 @@
 {% extends "index.html" %}
 
 {% block content %}
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 offset-md-2">
-            {% for message in messages %}
-            <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg"
-            role="alert">
-            {{ message | safe }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" >
-            </button>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-</div>
+
 
 
 <div class="container">
@@ -75,142 +62,393 @@
 
     <div class="container bg-success border">
         <div class="row border">
-            <div class="col-12">
-                <strong>Search Result</strong>
-            </div>
-        </div>
-        <div class="row border">
-            <div class="col-2 d-none d-xl-block">
+            <div class="col-2 d-none d-xl-block my-lg-3 mb-4 ps-4">
                 <strong>Name</strong>
             </div>
-            <div class="col-1 d-none d-xl-block">
+            <div class="col-1 d-none d-xl-block my-lg-3 mb-4 ps-4">
                 <strong>Company</strong>
             </div>
-            <div class="col-1 d-none d-xl-block">
+            <div class="col-2 d-none d-xl-block my-lg-3 mb-4 ps-4">
                 <strong>Destination</strong>
             </div>
-            <div class="col-2 d-none d-xl-block">
+            <div class="col-1 d-none d-xl-block my-lg-3 mb-4 ps-4">
                 <strong>Entry Date</strong>
             </div>
-            <div class="col-1 d-none d-xl-block">
+            <div class="col-1 d-none d-xl-block my-lg-3 mb-4 ps-4">
                 <strong>Time In</strong>
             </div>
-            <div class="col-1 d-none d-xl-block">
+            <div class="col-1 d-none d-xl-block my-lg-3 mb-4 ps-4">
                 <strong>Time Out</strong>
             </div>
-            <div class="col-1 text-center d-none d-xl-block">
-               <strong>On Site</strong>
-            </div>
-            <div class="col-1 text-center d-none d-xl-block">
-                <strong>Off Site</strong>
+            <div class="col-2 text-center d-none d-xl-block my-lg-3 mb-4 ps-4">
+                <strong>Check Out</strong>
              </div>
-            <div class="col-2 text-center d-none d-xl-block">
+            <div class="col-2 text-center d-none d-xl-block my-lg-3 mb-4 ps-4">
                 <strong>More Info</strong>
             </div>
         </div>
-        
-        {% for item in items %}
-        <div class="row border">
-            <div class="col-6 d-xl-none">
-                Name
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    {% for message in messages %}
+                    <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg"
+                    role="alert">
+                    {{ message | safe }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" >
+                    </button>
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
-            <div class="col-6 col-xl-2">
+        </div>
+        {% for item in items %}
+        
+
+        
+        <div class="row border" id="log{{item.id}}">
+            <div class="col-6 col-xl-2 d-xl-none ps-4 mt-3 text-end pt-3">
+                <strong>Name:</strong>
+            </div>
+            <div class="col-6 col-xl-2 pt-3 my-3 ps-4">
                 {{ item.first_name}} {{item.last_name}}
             </div>
-            <div class="col-6 d-xl-none">
-                Company
+            <div class="col-6 col-xl-1 d-xl-none mt-3 ps-4 text-end pt-3">
+                <strong>Company:</strong>
             </div>
-            <div class="col-6 col-xl-1">
+            <div class="col-6 col-xl-1 pt-3 my-3 ps-4 ">
                 {{ item.company}}
             </div>
-            <div class="col-6 d-xl-none">
-                Destination
+            <div class="col-6 col-xl-2 d-xl-none mt-3 ps-4 text-end pt-3">
+                <strong>Destination:</strong>
             </div>
-            <div class="col-6 col-xl-1">
+            <div class="col-6 col-xl-2 pt-3 my-3 ps-4">
                 {{ item.destination}}
             </div>
-            <div class="col-6 d-xl-none">
-                Entry Date
+            <div class="col-6 col-xl-1 d-xl-none mt-3 ps-4 text-end pt-3">
+                <strong>Entry Date:</strong>
             </div>
-            <div class="col-6 col-xl-2">
+            <div class="col-6 col-xl-1 pt-3 my-3 ps-4">
                 {{ item.entry_date|date:"d/m/y"}}
             </div>
-            <div class="col-6 d-xl-none">
-                Time In
+            <div class="col-6 col-xl-1 d-xl-none mt-3 ps-4 text-end pt-3">
+                <strong>Time In:</strong>
             </div>
-            <div class="col-6 col-xl-1">
+            <div class="col-6 col-xl-1 pt-3 my-3 ps-4">
                 {{ item.time_in|date:"G:i"}}
             </div>
-            <div class="col-6 d-xl-none">
-                Time Out
+            <div class="col-6 col-xl-1 d-xl-none mt-3 ps-4 text-end pt-3">
+                <strong>Time Out:</strong>
             </div>
-            <div class="col-6 col-xl-1" id="time_out{{item.id}}">
+            <div class="col-6 col-xl-1 pt-3 my-3 ps-4" id="time_out{{item.id}}">
                 {{ item.time_out|date:"G:i"}}
             </div>
-            <div class="btn-group col-md-2" role="group" aria-label="...">
-                <button type="button" name="in" class="btn btn-primary w-100">In</button>
-                <button type="button" name="out" class="btn btn-primary w-100"><a
-                        href="edit_time_out/{{item.id}}">Out</a></button>
+            <div class="col-md-4 col-xl-2 my-3" role="group" aria-label="...">
+                <a href="edit_time_out/{{item.id}}" class="btn btn btn-primary w-100" role="button" aria-disabled="true">Check Out</a>
             </div>
-            <div class="col-md-8 d-xl-none"></div>
-            <div class="col-md-2">
-                <button class="btn btn-sm w-100 text-center btn-primary" type="button" data-bs-toggle="collapse"
+            
+            <div class="col-md-4 col-lg-4 d-xl-none"></div>
+            <div class="col-md-4 col-xl-2">
+                <button class="btn btn-sm w-100 text-center btn-primary my-3" type="button" data-bs-toggle="collapse"
                     data-bs-target="#collapse-target{{item.id}}" aria-expanded="false" aria-controls="collapse-target">
                     More
                 </button>
             </div>
+            
+
+
+
+
             <div class="collapse" id="collapse-target{{item.id}}">
                 <div class="card card-body">
                     <div class="row">
-                        <div class="col-3">
-               
-                            <div><strong>Record Created:</strong></div>
-                            <div><strong>Phone number:</strong></div>
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4 text-end">
+                            <strong>Record Created:</strong>
+                        </div>
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4">
+                            <div>{{ item.created_on|date:"d/m/y - G:i" }}</div>
+                        </div>
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4 text-end">
+                            <strong>Phone Number:</strong>
+                        </div>
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4">
+                            <div>{{ item.phone_number }}</div>
+                        </div>
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4 text-end">
+                            <strong>Registration Number:</strong>
+                        </div>
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4">
+                            <div>{{ item.registration}}</div>
+                        </div>
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4 text-end">
+                            <strong>Granted Entry by:</strong>
+                        </div>
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4">
+                            <div>{{ item.officers_name }}</div>
+                        </div>
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4 text-end">
+                            <strong>Entry Gate:</strong>
+                        </div>
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4">
+                            <div>{{ item.gate_number }}</div>
+                        </div>
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4 text-end">
+                            <strong>Parking Expiration:</strong>
+                        </div>
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4">
+                            <div id="parking_time_limit{{item.id}}">{{ item.parking_time_limit|date:"G:i:s"}}</div>
+                        </div>
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4 text-end">
+                            <strong>On Site Status:</strong>
+                        </div>
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4">
+                            <div>{{ item.on_site_status }}</div>
+                        </div>
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4 text-end">
+                            <strong>Passenger 1 Name:</strong>
+                        </div>
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4">
+                            <div>{{ item.passenger1_first_name }} {{ item.passenger1_last_name }}</div>
+                        </div>
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4 text-end">
+                            <strong>Passenger 2 Name:</strong>
+                        </div>
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4">
+                            <div>{{ item.passenger2_first_name }} {{ item.passenger2_last_name }}</div>
+                        </div>
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4 text-end">
+                            <strong>Passenger 3 Name:</strong>
+                        </div>
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4">
+                            <div>{{ item.passenger3_first_name }} {{ item.passenger3_last_name }}</div>
+                        </div>
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4 text-end">
+                            <strong>Passenger 4 Name:</strong>
+                        </div>
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4">
+                            <div>{{ item.passenger4_first_name }} {{ item.passenger4_last_name }}</div>
+                        </div>
+                        
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4 text-end">
+                            <strong>Time Remaining:</strong>
+                        </div>
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4">
+                             <div id="timer{{item.id}}"></div>
+                        </div>
+                       
+                        
+                        
+                    </div>
+
+
+
+<!-- 
+                    <div class="row">
+
+                        
+
+
+
+
+
+                        <div class="col-md-3">
+
+                            
+                            <div></div>
                             <div><strong>Registration Number:</strong></div>
-                            <div><strong>Granted Entry by:</strong></div>
+                            <div><strong></strong></div>
                             <div><strong>Entry Gate</strong></div>
                             <div><strong>Parking Expiration</strong></div>
-                            <div><strong>Signature</strong></div>
                             <div><strong>On Site Status</strong></div>
                         </div>
-                        <div class="col-3">
-                            <div>{{ item.created_on|date:"d/m/y - G:i" }}</div> 
-                            <div>{{ item.phone_number }}</div> 
+                        
+                        <div class="col-md-3">
+                            <div>{{ item.created_on|date:"d/m/y - G:i" }}</div>
+                            <div>{{ item.phone_number }}</div>
                             <div>{{ item.registration }}</div>
                             <div>{{ item.officers_name }}</div>
                             <div>{{ item.gate_number }}</div>
-                            <div>{{ item.parking_time_limit|date:"G:i" }}</div>
-                            
-                            <div><img height="200px" width="320px" style="display: block;" src="{{item.signature}}"></div> 
-                            <div>{{ item.on_site_status }}</div>  
+                            <div id="parking_time_limit{{item.id}}">{{ item.parking_time_limit|date:"G:i:s"}}</div>
+                            <div>{{ item.on_site_status }}</div>
+
                         </div>
 
-                        <div class="col-3">
+                        <div class="col-md-3">
                             <div><strong>Passenger 1</strong></div>
                             <div><strong>Passenger 2</strong></div>
                             <div><strong>Passenger 3</strong></div>
                             <div><strong>Passenger 4</strong></div>
                         </div>
 
-                        <div class="col-3">
+                        <div class="col-md-3">
                             <div>{{ item.passenger_1 }}</div>
                             <div>{{ item.passenger_2 }}</div>
                             <div>{{ item.passenger_3 }}</div>
                             <div>{{ item.passenger_4 }}</div>
                         </div>
+                    </div> -->
+                    <div class="row border">
+                        <div class="col-md-4">
+                            <strong>Signed {{ item.first_name}} {{item.last_name}}:</strong>
+                        </div>
+                        <div class="col-md-4">
+                            <div><img height="200px" width="260px" style="display: block;" src="{{item.signature}}">
+                            </div>
+                        </div>
                     </div>
-                    
-                     
+
+
+                    {% if request.user.is_staff %}
+                    <div class="row">
+                        <div class="col text-center m-4">
+                            <a href="edit_log/{{item.id}}" class="btn btn-warning">Edit</a>
+                        </div>
+                        <div class="col text-center m-4">
+                            <a href="delete_log/{{item.id}}" class="btn btn-danger">Del</a>
+                        </div>
+                    </div>
+                    {% endif %}
+
+
+
+
                 </div>
             </div>
         </div>
-        
+        <!-- <script>
+            setTimeout(function() {
+                let time_out = document.getElementById("time_out{{item.id}}").value
+                let parking_expiraton_time = document.getElementById("parking_time_limit{{item.id}}").value
+                let time_now = new Date().toLocaleTimeString();
+                let trigger = parking_expiraton_time - time_now;
+                let messages = document.getElementById("msg");
+                let alert = new bootstrap.Alert(messages);
+                alert.close();
+            }, trigger)
+        </script> -->
+
+        <script>
+            // function timeFunction() {
+            //     const getSeconds = s => s.split(":").reduce((acc, curr) => acc * 60 + +curr, 0);
+            //     let parkingExpiryInSeconds = getSeconds(document.getElementById("parking_time_limit{{item.id}}").innerHTML);
+                
+            //     let today = new Date();
+            //     let timeNow = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            //     let timeNowInSeconds = getSeconds(timeNow)
+
+            //     let res = Math.abs(parkingExpiryInSeconds - timeNowInSeconds);
+            //     console.log(parkingExpiryInSeconds);
+            //     console.log(timeNowInSeconds);
+
+            //     let hours = Math.floor(res / 3600);
+
+            //     let minutes = Math.floor(res % 3600 / 60);
+
+            //     let seconds = res % 60;
+            //     document.getElementById("timeDifference{{item.id}}").innerHTML = hours + ":" + minutes + ":" + seconds;
+            // }
+
+            function overStayedAlarm() {
+                document.getElementById('log{{item.id}}').style.backgroundColor="blue";
+                document.getElementById("timer{{item.id}}").innerHTML = "Over Stayed";
+            }
+
+            function parentCountdown () {
+                const getSeconds = s => s.split(":").reduce((acc, curr) => acc * 60 + +curr, 0);
+                let parkingExpiryInSeconds = getSeconds(document.getElementById("parking_time_limit{{item.id}}").innerHTML);
+                
+                let today = new Date();
+                let timeNow = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+                let timeNowInSeconds = getSeconds(timeNow)
+
+                let res = Math.abs(parkingExpiryInSeconds - timeNowInSeconds);
+                console.log(parkingExpiryInSeconds);
+                console.log(timeNowInSeconds);
+
+                let hours = Math.floor(res / 3600);
+
+                let minutes = Math.floor(res % 3600 / 60);
+
+                let seconds = res % 60;
+                
+                
+                let timeRemaining = res;
+                let timerElement = document.getElementById("timer{{item.id}}");
+                    
+                let timerInterval = setInterval(countdown, 1000); 
+                
+                    function countdown() {
+                        
+                         
+                        let exit_time = document.getElementById("time_out{{item.id}}".innerHTML);
+
+                        if (timeRemaining <= -1 && exit_time == null || timeNowInSeconds >= parkingExpiryInSeconds && exit_time == null ) {
+                            clearInterval(timerInterval);
+                            document.getElementById("timer{{item.id}}").value = -1 - timeRemaining;
+                            timeRemaining -= 1;
+                            
+                            document.getElementById("timer{{item.id}}").innerHTML = "Over stayed"
+                            document.getElementById("log{{item.id}}").style.backgroundColor = "blue"
+                            
+                        // } else if (timeRemaining <= -1 && exit_time != null ) {
+                        //     clearInterval(timerInterval);
+                        //     document.getElementById("timer").value = -1 - timeRemaining;
+                        //     timeRemaining -= 1;
+                        //     console.log("do nothing")
+                        } else if (parkingExpiryInSeconds >= timeNowInSeconds ) {
+                            timerElement.innerText = Math.round(timeRemaining / 60)  + " minutes until expirey...";
+                            timeRemaining --;
+                            console.log("normal operation")
+                    }
+                }
+            }
+            // timeFunction()
+            parentCountdown ()
+        </script>
         
         {% endfor %}
     
-    </div>
-        
+        <div class="row">
+            <div class="col">
+                {% if items.has_other_pages %}
+                <nav>
+                    <ul class="pagination justify-content-center">
+                    {% if items.has_previous %}
+                        <li class="page-item">
+                        <a class="page-link" href="?page={{ posts.previous_page_number }}" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                        </li>
+                    {% else %}
+                        <li class="page-item disabled">
+                            <span class="page-link" aria-hidden="true">&laquo;</span>
+                        </li>
+                    {% endif %}
     
-</div>
+                    {% for i in items.paginator.page_range %}
+                        {% if items.number == i %}
+                        <li class="page-item"><a class="page-link" style="color: red;" href="#">{{ i }}</a></li>
+                        {% else %}
+                        <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+    
+                    {% if items.has_next %}
+                        <li class="page-item">
+                        <a class="page-link" href="?page={{ posts.next_page_number }}" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                        </li>
+                    {% else %}
+                        <li class="page-item disabled">
+                        <span class="page-link" aria-hidden="true">&raquo;</span>
+                        </li>
+                    {% endif %}
+                </ul>
+                </nav>
+                {% endif %}
+            </div>
+        </div>
+           
+    </div>
 
 {% endblock %}
