@@ -3,31 +3,28 @@
 {% block content %}
     <div class="container bg-success border">
         <div class="row border">
-            <div class="col-2 d-none d-xl-block my-lg-3 mb-4">
+            <div class="col-2 d-none d-xl-block my-lg-3 mb-4 ps-4">
                 <strong>Name</strong>
             </div>
-            <div class="col-1 d-none d-xl-block my-lg-3 mb-4">
+            <div class="col-1 d-none d-xl-block my-lg-3 mb-4 ps-4">
                 <strong>Company</strong>
             </div>
-            <div class="col-1 d-none d-xl-block my-lg-3 mb-4">
+            <div class="col-2 d-none d-xl-block my-lg-3 mb-4 ps-4">
                 <strong>Destination</strong>
             </div>
-            <div class="col-2 d-none d-xl-block my-lg-3 mb-4">
+            <div class="col-1 d-none d-xl-block my-lg-3 mb-4 ps-4">
                 <strong>Entry Date</strong>
             </div>
-            <div class="col-1 d-none d-xl-block my-lg-3 mb-4">
+            <div class="col-1 d-none d-xl-block my-lg-3 mb-4 ps-4">
                 <strong>Time In</strong>
             </div>
-            <div class="col-1 d-none d-xl-block my-lg-3 mb-4">
+            <div class="col-1 d-none d-xl-block my-lg-3 mb-4 ps-4">
                 <strong>Time Out</strong>
             </div>
-            <div class="col-1 text-center d-none d-xl-block my-lg-3 mb-4">
-               <strong>On Site</strong>
-            </div>
-            <div class="col-1 text-center d-none d-xl-block my-lg-3 mb-4">
-                <strong>Off Site</strong>
+            <div class="col-2 text-center d-none d-xl-block my-lg-3 mb-4 ps-4">
+                <strong>Check Out</strong>
              </div>
-            <div class="col-2 text-center d-none d-xl-block my-lg-3 mb-4">
+            <div class="col-2 text-center d-none d-xl-block my-lg-3 mb-4 ps-4">
                 <strong>More Info</strong>
             </div>
         </div>
@@ -48,58 +45,57 @@
         {% for item in items %}
         
 
-
+        
         <div class="row border" id="log{{item.id}}">
-            <div class="col-6 col-xl-2 d-xl-none mt-3">
-                <strong>Names </strong>
+            <div class="col-6 col-xl-2 d-xl-none ps-4 mt-3 text-end pt-3">
+                <strong>Name:</strong>
             </div>
-            <div class="col-6 col-xl-2 col-xl-2 mt-3 my-lg-">
+            <div class="col-6 col-xl-2 pt-3 my-3 ps-4">
                 {{ item.first_name}} {{item.last_name}}
             </div>
-            <div class="col-6 col-xl-1 d-xl-none mt-3 ">
-                <strong>Company</strong>
+            <div class="col-6 col-xl-1 d-xl-none mt-3 ps-4 text-end pt-3">
+                <strong>Company:</strong>
             </div>
-            <div class="col-6 col-xl-1 mt-3 my-lg-3 ">
+            <div class="col-6 col-xl-1 pt-3 my-3 ps-4 ">
                 {{ item.company}}
             </div>
-            <div class="col-6 col-xl-1 d-xl-none mt-3 ">
-                <strong>Destination</strong>
+            <div class="col-6 col-xl-2 d-xl-none mt-3 ps-4 text-end pt-3">
+                <strong>Destination:</strong>
             </div>
-            <div class="col-6 col-xl-1  mt-3 my-lg-3 ">
+            <div class="col-6 col-xl-2 pt-3 my-3 ps-4">
                 {{ item.destination}}
             </div>
-            <div class="col-6 col-xl-2 d-xl-none mt-3 ">
-                <strong>Entry Date</strong>
+            <div class="col-6 col-xl-1 d-xl-none mt-3 ps-4 text-end pt-3">
+                <strong>Entry Date:</strong>
             </div>
-            <div class="col-6 col-xl-2  mt-3 my-lg-3 ">
+            <div class="col-6 col-xl-1 pt-3 my-3 ps-4">
                 {{ item.entry_date|date:"d/m/y"}}
             </div>
-            <div class="col-6 col-xl-1 d-xl-none mt-3 ">
-                <strong>Time In </strong>
+            <div class="col-6 col-xl-1 d-xl-none mt-3 ps-4 text-end pt-3">
+                <strong>Time In:</strong>
             </div>
-            <div class="col-6 col-xl-1  mt-3 my-lg-3 ">
+            <div class="col-6 col-xl-1 pt-3 my-3 ps-4">
                 {{ item.time_in|date:"G:i"}}
             </div>
-            <div class="col-6 col-xl-1 d-xl-none mt-3">
-                <strong>Time</strong>
+            <div class="col-6 col-xl-1 d-xl-none mt-3 ps-4 text-end pt-3">
+                <strong>Time Out:</strong>
             </div>
-            <div class="col-6 col-xl-1  mt-3 my-lg-2 " id="time_out{{item.id}}">
+            <div class="col-6 col-xl-1 pt-3 my-3 ps-4" id="time_out{{item.id}}">
                 {{ item.time_out|date:"G:i"}}
             </div>
-            <div class="btn-group col-md-2" role="group" aria-label="...">
-                <button type="button" name="in" class="btn btn-primary w-100">In</button>
-                <button type="button" name="out" class="btn btn-primary w-100"><a
-                        href="edit_time_out/{{item.id}}">Out</a></button>
+            <div class="col-md-4 col-xl-2 mt-3" role="group" aria-label="...">
+                <button type="button" name="out" class="btn btn-primary w-100">Check Out<a
+                        href="edit_time_out/{{item.id}}"></a></button>
             </div>
-            <div class="col-md-8 d-xl-none"></div>
-            <div class="col-md-2">
-                <button class="btn btn-sm w-100 text-center btn-primary" type="button" data-bs-toggle="collapse"
+            <div class="col-md-4 col-lg-4 d-xl-none"></div>
+            <div class="col-md-4 col-xl-2">
+                <button class="btn btn-sm w-100 text-center btn-primary mt-3" type="button" data-bs-toggle="collapse"
                     data-bs-target="#collapse-target{{item.id}}" aria-expanded="false" aria-controls="collapse-target">
                     More
                 </button>
             </div>
             <div class="row">
-                <div class="col-md-8">
+                <div class="col text-center text-md-end my-3">
                     <div id="timer{{item.id}}"></div>
                 </div>
 
@@ -112,43 +108,43 @@
             <div class="collapse" id="collapse-target{{item.id}}">
                 <div class="card card-body">
                     <div class="row">
-                        <div class="col-6 col-xl-2 my-lg-3 mb-4">
+                        <div class="col-6 col-xl-2 my-lg-3 mb-4 text-end">
                             <strong>Record Created:</strong>
                         </div>
                         <div class="col-6 col-xl-2 my-lg-3 mb-4">
                             <div>{{ item.created_on|date:"d/m/y - G:i" }}</div>
                         </div>
-                        <div class="col-6 col-xl-2 my-lg-3 mb-4">
+                        <div class="col-6 col-xl-2 my-lg-3 mb-4 text-end">
                             <strong>Phone Number:</strong>
                         </div>
                         <div class="col-6 col-xl-2 my-lg-3 mb-4">
                             <div>{{ item.phone_number }}</div>
                         </div>
-                        <div class="col-6 col-xl-2 my-lg-3 mb-4">
+                        <div class="col-6 col-xl-2 my-lg-3 mb-4 text-end">
                             <strong>Registration Number:</strong>
                         </div>
                         <div class="col-6 col-xl-2 my-lg-3 mb-4">
                             <div>{{ item.registration}}</div>
                         </div>
-                        <div class="col-6 col-xl-2 my-lg-3 mb-4">
+                        <div class="col-6 col-xl-2 my-lg-3 mb-4 text-end">
                             <strong>Granted Entry by:</strong>
                         </div>
                         <div class="col-6 col-xl-2 my-lg-3 mb-4">
                             <div>{{ item.officers_name }}</div>
                         </div>
-                        <div class="col-6 col-xl-2 my-lg-3 mb-4">
+                        <div class="col-6 col-xl-2 my-lg-3 mb-4 text-end">
                             <strong>Entry Gate:</strong>
                         </div>
                         <div class="col-6 col-xl-2 my-lg-3 mb-4">
                             <div>{{ item.gate_number }}</div>
                         </div>
-                        <div class="col-6 col-xl-2 my-lg-3 mb-4">
+                        <div class="col-6 col-xl-2 my-lg-3 mb-4 text-end">
                             <strong>Entry Gate:</strong>
                         </div>
                         <div class="col-6 col-xl-2 my-lg-3 mb-4">
                             <div>{{ item.gate_number }}</div>
                         </div>
-                        <div class="col-6 col-xl-2 my-lg-3 mb-4">
+                        <div class="col-6 col-xl-2 my-lg-3 mb-4 text-end">
                             <strong>Parking Expiration:</strong>
                         </div>
                         <div class="col-6 col-xl-2 my-lg-3 mb-4">
