@@ -1,11 +1,11 @@
 {% extends "index.html" %}
 
 {% block content %}
-<div class="container logs">
+<div class="container access-form">
     <form method="POST" action="" class="signature-pad-form">
         {% csrf_token %}
         <div class="row">
-                    <div class="col-lg-2 my-lg-3 mt-3 ps-4">
+                    <div class="col-lg-2 my-lg-3 mt-4 ps-4">
                         {{form.first_name.label_tag}}
                     </div>
 
@@ -14,7 +14,7 @@
                         {{form.first_name}}
                     </div>
                    
-                    <div class="col-lg-2 my-lg-3 mt-3 ps-4">
+                    <div class="col-lg-2 my-lg-3 mt-4 ps-4">
                         {{form.last_name.label_tag}}
                     </div>
 
@@ -166,7 +166,7 @@
                     </div>
             </div>
 
-            <div class="container logs">
+            <div class="container access-form">
                 <div class="row">
                     <div class="col-lg-2 my-lg-3 mt-3 ps-4">
                         {{form.entry_date.label_tag}}
@@ -197,7 +197,7 @@
            
                
             
-            <div class="container border">
+            <div class="container access-form">
 
                 
                 <div class="row">
