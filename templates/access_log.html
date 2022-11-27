@@ -1,7 +1,7 @@
 {% extends "index.html" %}
 {% load static %}
 {% block content %}
-    <div class="container bg-success border">
+    <div class="container border logs">
         <div class="row border">
             <div class="col-2 d-none d-xl-block my-lg-3 mb-4 ps-4">
                 <strong>Name</strong>
@@ -251,7 +251,7 @@
                             timeRemaining -= 1;
                             
                             document.getElementById("timer{{item.id}}").innerHTML = "Over stayed"
-                            document.getElementById("log{{item.id}}").style.backgroundColor = "blue"
+                            document.getElementById("log{{item.id}}").style.backgroundColor = "tomato"
 
                         } else if (parkingExpiryInSeconds >= timeNowInSeconds ) {
                             timerElement.innerText = Math.round(timeRemaining / 60)  + " minutes until expirey...";
