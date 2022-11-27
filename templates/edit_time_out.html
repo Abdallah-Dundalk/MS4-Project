@@ -1,12 +1,12 @@
 {% extends "index.html" %}
 
 {% block content %}
-<div class="container-fluid">
+<div class="container-fluid logs">
 
    <div class="row">
     <div class="col-1"></div>
     <div class="col-10 text-center mt-5">
-        <p>Are you sure you want to sign out {{item.first_name}} {{item.last_name}} of {{ item.company }}at {% now "H:i" %}?</p>
+        <p>Are you sure you want to check out {{item.first_name}} {{item.last_name}} of {{ item.company }} at {% now "H:i" %}?</p>
     </div>
     <div class="col-1"></div>
    </div>
@@ -15,8 +15,8 @@
         {% csrf_token %}
         
         <div class="row justify-content-center">
-            <div class="col text-center"><button class="btn btn-success" name="time-out-submit-btn" type="submit">Yes</button></div>
-            <div class="col text-center"><button class="btn btn-danger" name="time-out-cancel-btn" type="submit">No</button></div>
+            <div class="col text-center"><button class="btn btn-success my-3" name="time-out-submit-btn" type="submit">Yes</button></div>
+            <div class="col text-center"><button class="btn btn-danger my-3" name="time-out-cancel-btn" type="submit">No</button></div>
             
         </div>
     </form>

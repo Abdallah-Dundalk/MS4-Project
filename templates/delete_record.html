@@ -1,12 +1,12 @@
 {% extends "index.html" %}
 
 {% block content %}
-<div class="container-fluid">
+<div class="container-fluid logs">
 
    <div class="row">
     <div class="col-1"></div>
     <div class="col-10 text-center mt-5">
-        <p>Are you sure you want to delete this record {{item.first_name}} {{item.last_name}} {{ item.company }}? This action cannot be undone</p>
+        <p>Are you sure you want to delete this record for {{item.first_name}} {{item.last_name}} from {{ item.company }}? This action cannot be undone.</p>
     </div>
     
     <div class="col-1"></div>
@@ -16,8 +16,8 @@
         {% csrf_token %}
         
         <div class="row justify-content-center">
-            <div class="col text-center"><button class="btn btn-success" name="cancel-btn" type="submit">Cancel</button></div>
-            <div class="col text-center"><button class="btn btn-danger" name="delete-btn" type="submit">Delete</button></div>
+            <div class="col text-center"><button class="btn btn-success my-3" name="cancel-btn" type="submit">Cancel</button></div>
+            <div class="col text-center"><button class="btn btn-danger my-3" name="delete-btn" type="submit">Delete</button></div>
             
         </div>
     </form>

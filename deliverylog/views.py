@@ -98,7 +98,7 @@ def edit_log_page(request, item_id):
         form = AccessForm(request.POST, instance=item)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Record successfully update.')
+            messages.success(request, 'Form successfully submitted.')
             return redirect('get_access_log')
     form = AccessForm(instance=item)
     context = {
@@ -125,11 +125,11 @@ def edit_time_out_page(request, item_id):
         # if form.is_valid():
         #     form.save()
         
-        messages.success(request, " 'Time Out' updated")
+        messages.success(request, "Driver successfully checked out")
         return redirect('get_access_log')
     elif request.method == 'POST' and 'time-out-cancel-btn' in request.POST:
         
-        messages.success(request, " 'Time Out' not updated")
+        messages.success(request, "Check out cancelled")
         return redirect('get_access_log')
         
     form = AccessForm(instance=item)
