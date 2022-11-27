@@ -108,48 +108,74 @@
             <div class="collapse" id="collapse-target{{item.id}}">
                 <div class="card card-body">
                     <div class="row">
-                        <div class="col-6 col-xl-2 my-lg-3 mb-4 text-end">
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4 text-end">
                             <strong>Record Created:</strong>
                         </div>
-                        <div class="col-6 col-xl-2 my-lg-3 mb-4">
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4">
                             <div>{{ item.created_on|date:"d/m/y - G:i" }}</div>
                         </div>
-                        <div class="col-6 col-xl-2 my-lg-3 mb-4 text-end">
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4 text-end">
                             <strong>Phone Number:</strong>
                         </div>
-                        <div class="col-6 col-xl-2 my-lg-3 mb-4">
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4">
                             <div>{{ item.phone_number }}</div>
                         </div>
-                        <div class="col-6 col-xl-2 my-lg-3 mb-4 text-end">
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4 text-end">
                             <strong>Registration Number:</strong>
                         </div>
-                        <div class="col-6 col-xl-2 my-lg-3 mb-4">
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4">
                             <div>{{ item.registration}}</div>
                         </div>
-                        <div class="col-6 col-xl-2 my-lg-3 mb-4 text-end">
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4 text-end">
                             <strong>Granted Entry by:</strong>
                         </div>
-                        <div class="col-6 col-xl-2 my-lg-3 mb-4">
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4">
                             <div>{{ item.officers_name }}</div>
                         </div>
-                        <div class="col-6 col-xl-2 my-lg-3 mb-4 text-end">
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4 text-end">
                             <strong>Entry Gate:</strong>
                         </div>
-                        <div class="col-6 col-xl-2 my-lg-3 mb-4">
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4">
                             <div>{{ item.gate_number }}</div>
                         </div>
-                        <div class="col-6 col-xl-2 my-lg-3 mb-4 text-end">
-                            <strong>Entry Gate:</strong>
-                        </div>
-                        <div class="col-6 col-xl-2 my-lg-3 mb-4">
-                            <div>{{ item.gate_number }}</div>
-                        </div>
-                        <div class="col-6 col-xl-2 my-lg-3 mb-4 text-end">
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4 text-end">
                             <strong>Parking Expiration:</strong>
                         </div>
-                        <div class="col-6 col-xl-2 my-lg-3 mb-4">
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4">
                             <div id="parking_time_limit{{item.id}}">{{ item.parking_time_limit|date:"G:i:s"}}</div>
                         </div>
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4 text-end">
+                            <strong>On Site Status:</strong>
+                        </div>
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4">
+                            <div>{{ item.on_site_status }}</div>
+                        </div>
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4 text-end">
+                            <strong>Passenger 1 Name:</strong>
+                        </div>
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4">
+                            <div>{{ item.passenger1_first_name }} {{ item.passenger1_last_name }}</div>
+                        </div>
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4 text-end">
+                            <strong>Passenger 2 Name:</strong>
+                        </div>
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4">
+                            <div>{{ item.passenger2_first_name }} {{ item.passenger2_last_name }}</div>
+                        </div>
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4 text-end">
+                            <strong>Passenger 3 Name:</strong>
+                        </div>
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4">
+                            <div>{{ item.passenger3_first_name }} {{ item.passenger3_last_name }}</div>
+                        </div>
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4 text-end">
+                            <strong>Passenger 4 Name:</strong>
+                        </div>
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4">
+                            <div>{{ item.passenger4_first_name }} {{ item.passenger4_last_name }}</div>
+                        </div>
+                        
+                        
                     </div>
 
 
@@ -201,7 +227,7 @@
                     </div> -->
                     <div class="row border">
                         <div class="col-md-4">
-                            <strong>Signature</strong>
+                            <strong>Signed {{ item.first_name}} {{item.last_name}}:</strong>
                         </div>
                         <div class="col-md-4">
                             <div><img height="200px" width="260px" style="display: block;" src="{{item.signature}}">
