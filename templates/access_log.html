@@ -83,24 +83,18 @@
             <div class="col-6 col-xl-1 pt-3 my-3 ps-4" id="time_out{{item.id}}">
                 {{ item.time_out|date:"G:i"}}
             </div>
-            <div class="col-md-4 col-xl-2 mt-3" role="group" aria-label="...">
+            <div class="col-md-4 col-xl-2 my-3" role="group" aria-label="...">
                 <button type="button" name="out" class="btn btn-primary w-100">Check Out<a
                         href="edit_time_out/{{item.id}}"></a></button>
             </div>
             <div class="col-md-4 col-lg-4 d-xl-none"></div>
             <div class="col-md-4 col-xl-2">
-                <button class="btn btn-sm w-100 text-center btn-primary mt-3" type="button" data-bs-toggle="collapse"
+                <button class="btn btn-sm w-100 text-center btn-primary my-3" type="button" data-bs-toggle="collapse"
                     data-bs-target="#collapse-target{{item.id}}" aria-expanded="false" aria-controls="collapse-target">
                     More
                 </button>
             </div>
-            <div class="row">
-                <div class="col text-center text-md-end my-3">
-                    <div id="timer{{item.id}}"></div>
-                </div>
-
-
-            </div>
+            
 
 
 
@@ -174,6 +168,14 @@
                         <div class="col-6 col-xl-3 my-lg-3 mb-4">
                             <div>{{ item.passenger4_first_name }} {{ item.passenger4_last_name }}</div>
                         </div>
+                        
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4 text-end">
+                            <strong>Time Remaining:</strong>
+                        </div>
+                        <div class="col-6 col-xl-3 my-lg-3 mb-4">
+                             <div id="timer{{item.id}}"></div>
+                        </div>
+                       
                         
                         
                     </div>
@@ -334,7 +336,7 @@
                         //     timeRemaining -= 1;
                         //     console.log("do nothing")
                         } else if (parkingExpiryInSeconds >= timeNowInSeconds ) {
-                            timerElement.innerText = Math.round(timeRemaining / 60)  + "minutes until expirey...";
+                            timerElement.innerText = Math.round(timeRemaining / 60)  + " minutes until expirey...";
                             timeRemaining --;
                             console.log("normal operation")
                     }
