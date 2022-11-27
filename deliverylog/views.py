@@ -56,8 +56,10 @@ def get_access_form_page(request):
     
 def get_search_page(request):
     first_name = request.POST.get('first_name')
+    last_name = request.POST.get('last_name')
     company = request.POST.get('company')
-    items = AccessLog.objects.all().filter(Q(first_name__iexact=first_name) | Q(company__iexact=company))
+    
+    items = AccessLog.objects.all().filter(Q(first_name__iexact=first_name) | Q(last_name__iexact=last_name) | Q(company__iexact=company))
     context = {
             'items': items
         }
