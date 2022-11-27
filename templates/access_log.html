@@ -84,7 +84,7 @@
                 {{ item.time_out|date:"G:i"}}
             </div>
             <div class="col-md-4 col-xl-2 my-3" role="group" aria-label="...">
-                <a href="edit_time_out/{{item.id}}" class="btn btn btn-primary w-100" role="button" aria-disabled="true">Check Out</a>
+                <a href="edit_time_out/{{item.id}}" class="btn btn-primary w-100" role="button" aria-disabled="true">Check Out</a>
             </div>
             
             <div class="col-md-4 col-lg-4 d-xl-none"></div>
@@ -180,53 +180,6 @@
                         
                     </div>
 
-
-
-<!-- 
-                    <div class="row">
-
-                        
-
-
-
-
-
-                        <div class="col-md-3">
-
-                            
-                            <div></div>
-                            <div><strong>Registration Number:</strong></div>
-                            <div><strong></strong></div>
-                            <div><strong>Entry Gate</strong></div>
-                            <div><strong>Parking Expiration</strong></div>
-                            <div><strong>On Site Status</strong></div>
-                        </div>
-                        
-                        <div class="col-md-3">
-                            <div>{{ item.created_on|date:"d/m/y - G:i" }}</div>
-                            <div>{{ item.phone_number }}</div>
-                            <div>{{ item.registration }}</div>
-                            <div>{{ item.officers_name }}</div>
-                            <div>{{ item.gate_number }}</div>
-                            <div id="parking_time_limit{{item.id}}">{{ item.parking_time_limit|date:"G:i:s"}}</div>
-                            <div>{{ item.on_site_status }}</div>
-
-                        </div>
-
-                        <div class="col-md-3">
-                            <div><strong>Passenger 1</strong></div>
-                            <div><strong>Passenger 2</strong></div>
-                            <div><strong>Passenger 3</strong></div>
-                            <div><strong>Passenger 4</strong></div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div>{{ item.passenger_1 }}</div>
-                            <div>{{ item.passenger_2 }}</div>
-                            <div>{{ item.passenger_3 }}</div>
-                            <div>{{ item.passenger_4 }}</div>
-                        </div>
-                    </div> -->
                     <div class="row border">
                         <div class="col-md-4">
                             <strong>Signed {{ item.first_name}} {{item.last_name}}:</strong>
@@ -255,39 +208,9 @@
                 </div>
             </div>
         </div>
-        <!-- <script>
-            setTimeout(function() {
-                let time_out = document.getElementById("time_out{{item.id}}").value
-                let parking_expiraton_time = document.getElementById("parking_time_limit{{item.id}}").value
-                let time_now = new Date().toLocaleTimeString();
-                let trigger = parking_expiraton_time - time_now;
-                let messages = document.getElementById("msg");
-                let alert = new bootstrap.Alert(messages);
-                alert.close();
-            }, trigger)
-        </script> -->
 
         <script>
-            // function timeFunction() {
-            //     const getSeconds = s => s.split(":").reduce((acc, curr) => acc * 60 + +curr, 0);
-            //     let parkingExpiryInSeconds = getSeconds(document.getElementById("parking_time_limit{{item.id}}").innerHTML);
-                
-            //     let today = new Date();
-            //     let timeNow = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-            //     let timeNowInSeconds = getSeconds(timeNow)
-
-            //     let res = Math.abs(parkingExpiryInSeconds - timeNowInSeconds);
-            //     console.log(parkingExpiryInSeconds);
-            //     console.log(timeNowInSeconds);
-
-            //     let hours = Math.floor(res / 3600);
-
-            //     let minutes = Math.floor(res % 3600 / 60);
-
-            //     let seconds = res % 60;
-            //     document.getElementById("timeDifference{{item.id}}").innerHTML = hours + ":" + minutes + ":" + seconds;
-            // }
-
+        
             function overStayedAlarm() {
                 document.getElementById('log{{item.id}}').style.backgroundColor="blue";
                 document.getElementById("timer{{item.id}}").innerHTML = "Over Stayed";
@@ -329,12 +252,7 @@
                             
                             document.getElementById("timer{{item.id}}").innerHTML = "Over stayed"
                             document.getElementById("log{{item.id}}").style.backgroundColor = "blue"
-                            
-                        // } else if (timeRemaining <= -1 && exit_time != null ) {
-                        //     clearInterval(timerInterval);
-                        //     document.getElementById("timer").value = -1 - timeRemaining;
-                        //     timeRemaining -= 1;
-                        //     console.log("do nothing")
+
                         } else if (parkingExpiryInSeconds >= timeNowInSeconds ) {
                             timerElement.innerText = Math.round(timeRemaining / 60)  + " minutes until expirey...";
                             timeRemaining --;
@@ -342,7 +260,7 @@
                     }
                 }
             }
-            // timeFunction()
+
             parentCountdown ()
         </script>
         

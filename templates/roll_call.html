@@ -175,25 +175,7 @@
             </div>
         </div>
         <script>
-            // function timeFunction() {
-            //     const getSeconds = s => s.split(":").reduce((acc, curr) => acc * 60 + +curr, 0);
-            //     let parkingExpiryInSeconds = getSeconds(document.getElementById("parking_time_limit{{item.id}}").innerHTML);
-                
-            //     let today = new Date();
-            //     let timeNow = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-            //     let timeNowInSeconds = getSeconds(timeNow)
-
-            //     let res = Math.abs(parkingExpiryInSeconds - timeNowInSeconds);
-            //     console.log(parkingExpiryInSeconds);
-            //     console.log(timeNowInSeconds);
-
-            //     let hours = Math.floor(res / 3600);
-
-            //     let minutes = Math.floor(res % 3600 / 60);
-
-            //     let seconds = res % 60;
-            //     document.getElementById("timeDifference{{item.id}}").innerHTML = hours + ":" + minutes + ":" + seconds;
-            // }
+           
 
             function overStayedAlarm() {
                 document.getElementById('log{{item.id}}').style.backgroundColor="blue";
@@ -237,11 +219,7 @@
                             document.getElementById("timer{{item.id}}").innerHTML = "Over stayed"
                             document.getElementById("log{{item.id}}").style.backgroundColor = "blue"
                             
-                        // } else if (timeRemaining <= -1 && exit_time != null ) {
-                        //     clearInterval(timerInterval);
-                        //     document.getElementById("timer").value = -1 - timeRemaining;
-                        //     timeRemaining -= 1;
-                        //     console.log("do nothing")
+                     
                         } else if (parkingExpiryInSeconds >= timeNowInSeconds ) {
                             timerElement.innerText = Math.round(timeRemaining / 60)  + " minutes until expirey...";
                             timeRemaining --;
@@ -249,7 +227,7 @@
                     }
                 }
             }
-            // timeFunction()
+         
             parentCountdown ()
         </script>
     </div>

@@ -54,13 +54,12 @@ window.addEventListener('DOMContentLoaded', event => {
 });
 
 function copyDetails() {
-    // fname = document.getElementById("fname")
-    // lname = document.getElementById("lname")
+  
     document.getElementById("test").style.backgroundColor = "red";
 
 };
 
-// document.getElementById("confirm-details").addEventListener('click', copyDetails());
+
 
 // ---------------------------------------------------------------------------------------
 const canvas = document.querySelector('canvas');
@@ -114,20 +113,7 @@ canvas.addEventListener('pointerdown', handlePointerDown, {passive: true});
 canvas.addEventListener('pointerup', handlePointerUp, {passive: true});
 canvas.addEventListener('pointermove', handlePointerMove, {passive: true});
 
-// form.addEventListener('submit', (event) => {
-//     event.preventDefault();
 
-//     const imageURL = canvas.toDataURL();
-//     const image = document.createElement('img');
-//     image.src = imageURL;
-//     image.height = canvas.height;
-//     image.width = canvas.width;
-//     image.style.display = 'block';
-//     form.appendChild(image);
-//     clearPad();
-// })
-// ------------------------------------------
-// const imageURL = canvas.toDataURL();
 const formSignatureField = document.getElementById("id_signature")
 document.getElementById("confirm-signature").addEventListener("click", pasteDataURL);
 
@@ -140,22 +126,17 @@ function pasteDataURL() {
     image.height = canvas.height;
     image.width = canvas.width;
     image.style.display = 'block';
-    // form.appendChild(image);
+   
     formSignatureField.value = imageURL
     clearPad();
-    // formSignatureField.value = imageURL
-    // clearPad();
-    // document.getElementById("signature").style.backgroundColor = "lightblue";
+    
 
 
 }
 document.getElementById("get_status").addEventListener("click", testStatus);
 
 function testStatus() {
-    // let onSiteStatus = document.getElementById("status")
-    // if (onSiteStatus.innerText = "True") {
-    //     onSiteStatus.style.backgroundColor = "red";
-    // };
+   
     document.getElementById("status").style.color = "lightblue";
 
 }
