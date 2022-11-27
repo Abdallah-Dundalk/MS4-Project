@@ -25,17 +25,18 @@ def get_roll_call_page(request):
 
 
 def get_access_log_page(request):
-    things = AccessLog.objects.all()
+    logs = AccessLog.objects.all()
    
-    # for item in items:
-    #     if item.time_out is None:
-    #         item.on_site_status = True
-    #     else:
-    #         item.on_site_status = False
-    #         item.save()
+    for log in logs:
+        if log.time_out is None:
+            log.on_site_status = True
+            log.save()
+        else:
+            log.on_site_status = False
+            log.save()
 
     page = request.GET.get('page', 1)
-    paginator = Paginator(things, 30)
+    paginator = Paginator(logs, 30)
 
     try:
         items = paginator.page(page)
