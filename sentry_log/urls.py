@@ -28,5 +28,7 @@ urlpatterns = [
     path('access_log/edit_log/<item_id>/', views.edit_log_page, name='edit_log'),
     path('access_log/edit_time_out/<item_id>/', views.edit_time_out_page, name='edit_time_out_page'),
     path('access_log/delete_log/<item_id>/', views.delete_log_page, name='delete_log'),
+    path('roll_call/delete_log/<item_id>/', views.delete_log_page, name='delete_log'),
+    path('roll_call/edit_log/<item_id>/', views.edit_log_page, name='edit_log'),
     path('accounts/', include('allauth.urls'))
 ]
