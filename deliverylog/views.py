@@ -2,7 +2,9 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import AccessLog
 from django.db.models import Q
 from django.contrib import messages
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .forms import AccessForm
+
 import base64
 import datetime
 
@@ -23,18 +25,30 @@ def get_roll_call_page(request):
 
 
 def get_access_log_page(request):
-    items = AccessLog.objects.all()
+    things = AccessLog.objects.all()
+   
+    # for item in items:
+    #     if item.time_out is None:
+    #         item.on_site_status = True
+    #     else:
+    #         item.on_site_status = False
+    #         item.save()
+
+    page = request.GET.get('page', 1)
+    paginator = Paginator(things, 30)
+
+    try:
+        items = paginator.page(page)
+    except PageNotAnInteger:
+        items = paginator.page(1)
+    except EmptyPage:
+        items = paginator.page(paginator.num_pages)
+    
     context = {
         'items': items
     }
-    for item in items:
-        if item.time_out is None:
-            item.on_site_status = True
-        else:
-            item.on_site_status = False
-            item.save()
 
-    return render(request, 'access_log.html', context)
+    return render(request,'access_log.html', context)
    
 
 def get_access_form_page(request):
@@ -126,9 +140,11 @@ def delete_log_page(request, item_id):
     if request.method == 'POST' and 'delete-btn' in request.POST:
         item.delete()
         print("deleted")
+        messages.success(request, 'Record deleted.')
         return redirect('get_access_log')
     elif request.method == 'POST' and 'cancel-btn' in request.POST:
         print("cancelled")
+        messages.success(request, 'Record not deleted.')
         return redirect('get_access_log')
     form = AccessForm(instance=item)
     context = {
