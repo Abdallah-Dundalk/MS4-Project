@@ -1,11 +1,11 @@
 {% extends "index.html" %}
 
 {% block content %}
-<div class="container">
+<div class="container logs">
     <form method="POST" action="" class="signature-pad-form">
         {% csrf_token %}
         <div class="row">
-                    <div class="col-lg-2 my-lg-3 mt-2">
+                    <div class="col-lg-2 my-lg-3 mt-3 ps-4">
                         {{form.first_name.label_tag}}
                     </div>
 
@@ -14,7 +14,7 @@
                         {{form.first_name}}
                     </div>
                    
-                    <div class="col-lg-2 my-lg-3">
+                    <div class="col-lg-2 my-lg-3 mt-3 ps-4">
                         {{form.last_name.label_tag}}
                     </div>
 
@@ -23,7 +23,7 @@
                         {{form.last_name}}
                     </div>
 
-                    <div class="col-lg-2 my-lg-3">
+                    <div class="col-lg-2 my-lg-3 mt-3 ps-4">
                         {{form.phone_number.label_tag}}
                     </div>
 
@@ -32,7 +32,7 @@
                         {{form.phone_number}}
                     </div>
                    
-                    <div class="col-lg-2 my-lg-3">
+                    <div class="col-lg-2 my-lg-3 mt-3 ps-4">
                         {{form.registration.label_tag}}
                     </div>
 
@@ -41,7 +41,7 @@
                         {{form.registration}}
                     </div>
 
-                    <div class="col-lg-2 my-lg-3">
+                    <div class="col-lg-2 my-lg-3 mt-3 ps-4">
                         {{form.company.label_tag}}
                     </div>
 
@@ -50,7 +50,7 @@
                         {{form.company}}
                     </div>
                     
-                    <div class="col-lg-2 my-lg-3">
+                    <div class="col-lg-2 my-lg-3 mt-3 ps-4">
                         {{form.destination.label_tag}}
                     </div>
 
@@ -60,7 +60,7 @@
                     </div>
 
                     
-                    <div class="col-lg-2 my-lg-3">
+                    <div class="col-lg-2 my-lg-3 mt-3 ps-4">
                         {{form.gate_number.label_tag}}
                     </div>
 
@@ -69,7 +69,7 @@
                         {{form.gate_number}}
                     </div>
 
-                    <div class="col-lg-2 my-lg-3">
+                    <div class="col-lg-2 my-lg-3 mt-3 ps-4">
                         {{form.officers_name.label_tag}}
                     </div>
 
@@ -78,7 +78,7 @@
                         {{form.officers_name}}
                     </div>
 
-                    <div class="col-lg-2 my-lg-3">
+                    <div class="col-lg-2 my-lg-3 mt-3 ps-4">
                         {{form.parking_time_limit.label_tag}}
                     </div>
 
@@ -91,7 +91,7 @@
            
 
                     <div class="row">
-                        <div class="col-lg-2 my-lg-3 mt-2">
+                        <div class="col-lg-2 my-lg-3 mt-3 ps-4">
                             {{form.passenger1_first_name.label_tag}}
                         </div>
 
@@ -100,7 +100,7 @@
                             {{form.passenger1_first_name}}
                         </div>
 
-                        <div class="col-lg-2 my-lg-3">
+                        <div class="col-lg-2 my-lg-3 mt-3 ps-4">
                             {{form.passenger1_last_name.label_tag}}
                         </div>
 
@@ -109,7 +109,7 @@
                             {{form.passenger1_last_name}}
                         </div>
 
-                        <div class="col-lg-2 my-lg-3">
+                        <div class="col-lg-2 my-lg-3 mt-3 ps-4">
                             {{form.passenger2_first_name.label_tag}}
                         </div>
 
@@ -118,7 +118,7 @@
                             {{form.passenger2_first_name}}
                         </div>
 
-                        <div class="col-lg-2 my-lg-3">
+                        <div class="col-lg-2 my-lg-3 mt-3 ps-4">
                             {{form.passenger2_last_name.label_tag}}
                         </div>
 
@@ -128,7 +128,7 @@
                         </div>
 
 
-                        <div class="col-lg-2 my-lg-3">
+                        <div class="col-lg-2 my-lg-3 mt-3 ps-4">
                             {{form.passenger3_first_name.label_tag}}
                         </div>
 
@@ -137,7 +137,7 @@
                             {{form.passenger3_first_name}}
                         </div>
 
-                        <div class="col-lg-2 my-lg-3">
+                        <div class="col-lg-2 my-lg-3 mt-3 ps-4">
                             {{form.passenger3_last_name.label_tag}}
                         </div>
 
@@ -146,7 +146,7 @@
                             {{form.passenger3_last_name}}
                         </div>
 
-                        <div class="col-lg-2 my-lg-3">
+                        <div class="col-lg-2 my-lg-3 mt-3 ps-4">
                             {{form.passenger4_first_name.label_tag}}
                         </div>
 
@@ -155,7 +155,7 @@
                             {{form.passenger4_first_name}}
                         </div>
 
-                        <div class="col-lg-2 my-lg-3">
+                        <div class="col-lg-2 my-lg-3 mt-3 ps-4">
                             {{form.passenger4_last_name.label_tag}}
                         </div>
 
@@ -166,27 +166,27 @@
                     </div>
             </div>
 
-            <div class="container">
+            <div class="container logs">
                 <div class="row">
-                    <div class="col-lg-2 my-lg-3 mt-2">
+                    <div class="col-lg-2 my-lg-3 mt-3 ps-4">
                         {{form.entry_date.label_tag}}
                     </div>
                     <div class="col-lg-4 my-lg-3 mb-sm-4">
                         {{form.entry_date}}
                     </div>
-                    <div class="col-lg-2 my-lg-3">
+                    <div class="col-lg-2 my-lg-3 mt-3 ps-4">
                         {{form.created_on.label_tag}}
                     </div>
                     <div class="col-lg-4 my-lg-3 mb-sm-4">
                         {{form.created_on}}
                     </div>
-                    <div class="col-lg-2 my-lg-3">
+                    <div class="col-lg-2 my-lg-3 mt-3 ps-4">
                         {{form.time_in.label_tag}}
                     </div>
                     <div class="col-lg-4 my-lg-3 mb-sm-4">
                         {{form.time_in}}
                     </div>
-                    <div class="col-lg-2 my-lg-3">
+                    <div class="col-lg-2 my-lg-3 mt-3 ps-4">
                         {{form.time_out.label_tag}}
                     </div>
                     <div class="col-lg-4 my-lg-3 mb-sm-4">
