@@ -120,6 +120,7 @@ def edit_time_out_page(request, item_id):
     item = get_object_or_404(AccessLog, id=item_id)
     if request.method == 'POST' and 'time-out-submit-btn' in request.POST:
         item.time_out = datetime.datetime.now()
+        item.exit_date = datetime.date.today()
         item.save()
         # form = AccessForm(request.POST, instance=item)
         # if form.is_valid():

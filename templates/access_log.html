@@ -13,7 +13,7 @@
             <div class="col-1 d-none d-xl-block my-lg-3 mb-4 ps-4">
                 <strong>Company</strong>
             </div>
-            <div class="col-2 d-none d-xl-block my-lg-3 mb-4 ps-4">
+            <div class="col-1 d-none d-xl-block my-lg-3 mb-4 ps-4">
                 <strong>Destination</strong>
             </div>
             <div class="col-1 d-none d-xl-block my-lg-3 mb-4 ps-4">
@@ -21,6 +21,9 @@
             </div>
             <div class="col-1 d-none d-xl-block my-lg-3 mb-4 ps-4">
                 <strong>Time In</strong>
+            </div>
+            <div class="col-1 d-none d-xl-block my-lg-3 mb-4 ps-4">
+                <strong>Exit Date</strong>
             </div>
             <div class="col-1 d-none d-xl-block my-lg-3 mb-4 ps-4">
                 <strong>Time Out</strong>
@@ -63,10 +66,10 @@
             <div class="col-6 col-xl-1 pt-3 my-3 ps-4 ">
                 {{ item.company}}
             </div>
-            <div class="col-6 col-xl-2 d-xl-none mt-3 ps-4 text-end pt-3">
+            <div class="col-6 col-xl-1 d-xl-none mt-3 ps-4 text-end pt-3">
                 <strong>Destination:</strong>
             </div>
-            <div class="col-6 col-xl-2 pt-3 my-3 ps-4">
+            <div class="col-6 col-xl-1 pt-3 my-3 ps-4">
                 {{ item.destination}}
             </div>
             <div class="col-6 col-xl-1 d-xl-none mt-3 ps-4 text-end pt-3">
@@ -80,6 +83,12 @@
             </div>
             <div class="col-6 col-xl-1 pt-3 my-3 ps-4">
                 {{ item.time_in|date:"G:i"}}
+            </div>
+            <div class="col-6 col-xl-1 d-xl-none mt-3 ps-4 text-end pt-3">
+                <strong>Exit Date:</strong>
+            </div>
+            <div class="col-6 col-xl-1 pt-3 my-3 ps-4">
+                {{ item.exit_date|date:"d/m/y"}}
             </div>
             <div class="col-6 col-xl-1 d-xl-none mt-3 ps-4 text-end pt-3">
                 <strong>Time Out:</strong>
