@@ -116,7 +116,7 @@ canvas.addEventListener('pointermove', handlePointerMove, {passive: true});
 
 const formSignatureField = document.getElementById("id_signature")
 document.getElementById("confirm-signature").addEventListener("click", pasteDataURL);
-
+document.getElementById("form-submit-btn").addEventListener("click", formSubmitAlert);
 
 function pasteDataURL() {
     
@@ -129,10 +129,13 @@ function pasteDataURL() {
    
     formSignatureField.value = imageURL
     clearPad();
-    
-
-
 }
+
+function formSubmitAlert() {
+    if (formSignatureField.innerText == "")
+    alert("Ensure all fields have been completed. You must press 'Confirm Signature' before pressing 'Submit'.");
+  }
+
 document.getElementById("get_status").addEventListener("click", testStatus);
 
 function testStatus() {

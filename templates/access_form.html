@@ -203,12 +203,8 @@
                     <div class="col-lg-4 my-lg-3 mb-sm-4">
                         {{form.time_in}}
                     </div>
-                    <div class="col-lg-2 my-lg-3">
-                        {{form.time_out.label_tag}}
-                    </div>
-                    <div class="col-lg-4 my-lg-3 mb-sm-4">
-                        {{form.time_out}}
-                    </div>
+                    
+                    
                 </div>
             </div>
            
@@ -239,7 +235,7 @@
                         </p>
 
                         <canvas height="200px" width="260px" class="signature-pad border" ></canvas>
-                        <div class="row">
+                        <div class="row d-none">
                             <div class="col-lg-2 my-lg-3">
                                 {{form.signature.label_tag}}
                             </div>
@@ -254,7 +250,7 @@
 
                         <button id="confirm-signature" type="button">Confirm Signature</button>
 
-                        <button class="submit-button" type="submit">SUBMIT</button>
+                        <button id="form-submit-btn" class="submit-button" type="submit" >SUBMIT</button>
                     </div>
                 </div>
             </div>
