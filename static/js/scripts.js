@@ -53,22 +53,15 @@ window.addEventListener('DOMContentLoaded', event => {
 
 });
 
-function copyDetails() {
-  
-    document.getElementById("test").style.backgroundColor = "red";
 
-};
+// ------The following is code I took from DivByDiv and modified for this project. You can find the tutorial here https://www.youtube.com/watch?v=U0qJG5DZ5_U
+// This code allows the user to draw ona canvas, tehn stores teh canvas as an image. Then the image is converted to a string. 
 
-
-
-// ---------------------------------------------------------------------------------------
 const canvas = document.querySelector('canvas');
 const form = document.querySelector('.signature-pad-form');
 const clearButton = document.querySelector('.clear-button');
 const ctx = canvas.getContext('2d');
 let writingMode = false;
-
-
 
 const clearPad = () => {
    ctx.clearRect(0, 0, canvas.width, canvas.height); 
@@ -114,6 +107,7 @@ canvas.addEventListener('pointerup', handlePointerUp, {passive: true});
 canvas.addEventListener('pointermove', handlePointerMove, {passive: true});
 
 
+// When the user clicks confirm signature, the signature string data is pasted to the signature input on the form. 
 const formSignatureField = document.getElementById("id_signature")
 document.getElementById("confirm-signature").addEventListener("click", pasteDataURL);
 document.getElementById("form-submit-btn").addEventListener("click", formSubmitAlert);
@@ -128,20 +122,21 @@ function pasteDataURL() {
     image.style.display = 'block';
    
     formSignatureField.value = imageURL
-    // clearPad();
 }
 
+// If the signture input field is empty when the submit button is pressed, teh user is notified and told to fill in all fields and click confrim signature beofre submitting form.
 function formSubmitAlert() {
     if (formSignatureField.value.length == 0)
     alert("Ensure all fields have been completed. You must press 'Confirm Signature' before pressing 'Submit'.");
   }
 
-
-document.getElementById("get_status").addEventListener("click", testStatus);
-
-function testStatus() {
-   
-    document.getElementById("status").style.color = "lightblue";
-
+//   If the user clicks confirm signature before signing on the canvas, teh user is informed that a signature is required. Or if a signature has been signed, the user is advised the signature is confirmed.
+function confirmSignature() {
+    if (formSignatureField.value.length != 0) {
+        alert("Signature confirmed.");
+    } else {
+        alert("Please write signature");
+    }
 }
+
 
