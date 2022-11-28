@@ -13,14 +13,22 @@ class AccessLog(models.Model):
     gate_number = models.IntegerField()
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
-    passenger1_first_name = models.CharField(max_length=50, default="", blank=True, null=True)
-    passenger1_last_name = models.CharField(max_length=50, default="", blank=True, null=True)
-    passenger2_first_name = models.CharField(max_length=50, default="", blank=True, null=True)
-    passenger2_last_name = models.CharField(max_length=50, default="", blank=True, null=True)
-    passenger3_first_name = models.CharField(max_length=50, default="", blank=True, null=True)
-    passenger3_last_name = models.CharField(max_length=50, default="", blank=True, null=True)
-    passenger4_first_name = models.CharField(max_length=50, default="", blank=True, null=True)
-    passenger4_last_name = models.CharField(max_length=50, default="", blank=True, null=True)
+    passenger1_first_name = models.CharField(max_length=50, default="",
+                                             blank=True, null=True)
+    passenger1_last_name = models.CharField(max_length=50, default="",
+                                            blank=True, null=True)
+    passenger2_first_name = models.CharField(max_length=50, default="",
+                                             blank=True, null=True)
+    passenger2_last_name = models.CharField(max_length=50, default="",
+                                            blank=True, null=True)
+    passenger3_first_name = models.CharField(max_length=50, default="",
+                                             blank=True, null=True)
+    passenger3_last_name = models.CharField(max_length=50, default="",
+                                            blank=True, null=True)
+    passenger4_first_name = models.CharField(max_length=50, default="",
+                                             blank=True, null=True)
+    passenger4_last_name = models.CharField(max_length=50, default="",
+                                            blank=True, null=True)
     phone_number = models.IntegerField()
     registration = models.CharField(max_length=20)
     company = models.CharField(max_length=50)
@@ -35,14 +43,9 @@ class AccessLog(models.Model):
     parking_time_limit = models.TimeField()
     officers_name = models.CharField(max_length=50, default="")
     created_on = models.DateTimeField()
-   
-    
-
 
     class Meta:
         ordering = ['-created_on']
 
     def __str__(self):
         return self.first_name + " " + self.last_name + " " + self.company
-
-    

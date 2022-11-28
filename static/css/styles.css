@@ -11492,7 +11492,7 @@ body {
   padding: 0.9rem 0;
 }
 #mainNav .navbar-nav .nav-item:hover {
-  color: fade(#fff, 80%);
+  color: white;
   outline: none;
   background-color: transparent;
 }
