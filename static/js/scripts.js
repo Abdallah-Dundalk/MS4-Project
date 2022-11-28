@@ -134,8 +134,6 @@ function formSubmitAlert() {
 function confirmSignature() {
     if (formSignatureField.value.length != 0) {
         alert("Signature confirmed.");
-    } else {
-        alert("Please write signature");
     }
 }
 
