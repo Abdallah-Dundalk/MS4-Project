@@ -131,10 +131,10 @@ function formSubmitAlert() {
   }
 
 //   If the user clicks confirm signature before signing on the canvas, teh user is informed that a signature is required. Or if a signature has been signed, the user is advised the signature is confirmed.
-setTimeout(function confirmSignature() {
+function confirmSignature() {
     if (formSignatureField.value.length != 0) {
         alert("Signature confirmed.");
     }
-},100)
+}
 
 

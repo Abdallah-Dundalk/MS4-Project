@@ -139,7 +139,8 @@ The goal in develpoing Sentry Log was to create an app that allows the user to b
 
 ## Remaining Bugs:
 * Deliveries will not show as overdue if the expiration time has passed by 24 hours, this is because the time code is not linked to a date value.
-The signature pad accepts a blank signature, so I need to code to prevent the signature input from accepting the todata value that is equal to a blank canvas. 
+* The signature pad accepts a blank signature, so I need to code to prevent the signature input from accepting the todata value that is equal to a blank canvas.
+* I discovered at th elast minute that the signature pad doesnt work properly on mobile devices, but works fine on desk top.
 
 ## Validator Testing:
 * Code for all pages was passed through the W3 Markup validator with no errors detected.
