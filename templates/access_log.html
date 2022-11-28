@@ -203,7 +203,7 @@
             </div>
         </div>
         <script>
-            // timer that compare time between parkign expirey and the current time. If parkign time limit has expired, delivery will change colour to red
+            // timer that compare time between parking expirey and the current time. If parkign time limit has expired, delivery will change colour to red
             function parentCountdown () {
                 const getSeconds = s => s.split(":").reduce((acc, curr) => acc * 60 + +curr, 0);
                 let parkingExpiryInSeconds = getSeconds(document.getElementById("parking_time_limit{{item.id}}").innerHTML);
@@ -253,7 +253,7 @@
         </script>
         
         {% endfor %}
-        <!-- the beow code is for pagintation and is by Fahadul Shadhin and can be found at https://python.plainenglish.io/how-to-implement-pagination-in-django-with-function-based-views-8f6462554930 -->
+        <!-- the below code is for pagintation and is by Fahadul Shadhin and can be found at https://python.plainenglish.io/how-to-implement-pagination-in-django-with-function-based-views-8f6462554930 -->
         <div class="row">
             <div class="col">
                 {% if items.has_other_pages %}

@@ -124,7 +124,7 @@ function pasteDataURL() {
     formSignatureField.value = imageURL
 }
 
-// If the signture input field is empty when the submit button is pressed, teh user is notified and told to fill in all fields and click confrim signature beofre submitting form.
+// If the signture input field is empty when the submit button is pressed, the user is notified and told to fill in all fields and click confrim signature beofre submitting form.
 function formSubmitAlert() {
     if (formSignatureField.value.length == 0)
     alert("Ensure all fields have been completed. You must press 'Confirm Signature' before pressing 'Submit'.");
