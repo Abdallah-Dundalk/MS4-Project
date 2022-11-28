@@ -50,9 +50,6 @@
             </div>
         </div>
         {% for item in items %}
-        
-
-        
         <div class="row border" id="log{{item.id}}">
             <div class="col-6 col-xl-2 d-xl-none ps-4 mt-3 text-end pt-3">
                 <strong>Name:</strong>
@@ -99,7 +96,6 @@
             <div class="col-md-4 col-xl-2 my-3" role="group" aria-label="...">
                 <a href="edit_time_out/{{item.id}}" class="btn btn-primary w-100" role="button" aria-disabled="true">Check Out</a>
             </div>
-            
             <div class="col-md-4 col-lg-4 d-xl-none"></div>
             <div class="col-md-4 col-xl-2">
                 <button class="btn btn-sm w-100 text-center btn-primary my-3" type="button" data-bs-toggle="collapse"
@@ -107,11 +103,6 @@
                     More
                 </button>
             </div>
-            
-
-
-
-
             <div class="collapse" id="collapse-target{{item.id}}">
                 <div class="card card-body">
                     <div class="row">
@@ -187,12 +178,8 @@
                         </div>
                         <div class="col-6 col-xl-3 my-lg-3 mb-4">
                              <div id="timer{{item.id}}"></div>
-                        </div>
-                       
-                        
-                        
+                        </div> 
                     </div>
-
                     <div class="row border">
                         <div class="col-md-4">
                             <strong>Signed {{ item.first_name}} {{item.last_name}}:</strong>
@@ -202,8 +189,6 @@
                             </div>
                         </div>
                     </div>
-
-
                     {% if request.user.is_staff %}
                     <div class="row">
                         <div class="col text-center m-4">
@@ -214,21 +199,11 @@
                         </div>
                     </div>
                     {% endif %}
-
-
-
-
                 </div>
             </div>
         </div>
-
         <script>
-        
-            function overStayedAlarm() {
-                document.getElementById('log{{item.id}}').style.backgroundColor="blue";
-                document.getElementById("timer{{item.id}}").innerHTML = "Over Stayed";
-            }
-
+            // timer that compare time between parkign expirey and the current time. If parkign time limit has expired, delivery will change colour to red
             function parentCountdown () {
                 const getSeconds = s => s.split(":").reduce((acc, curr) => acc * 60 + +curr, 0);
                 let parkingExpiryInSeconds = getSeconds(document.getElementById("parking_time_limit{{item.id}}").innerHTML);
@@ -278,7 +253,7 @@
         </script>
         
         {% endfor %}
-    
+        <!-- the beow code is for pagintation and is by Fahadul Shadhin and can be found at https://python.plainenglish.io/how-to-implement-pagination-in-django-with-function-based-views-8f6462554930 -->
         <div class="row">
             <div class="col">
                 {% if items.has_other_pages %}

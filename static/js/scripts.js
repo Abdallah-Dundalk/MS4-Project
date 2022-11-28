@@ -7,6 +7,7 @@
 // Scripts
 // 
 
+// The following code was already included in this boot strap template from Startbootstrap.com.
 window.addEventListener('DOMContentLoaded', event => {
 
     // Navbar shrink function

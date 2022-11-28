@@ -4,94 +4,62 @@
 <div class="container access-form">
     <form method="POST" class="signature-pad-form ">
         {% csrf_token %}
-        
-
             <div class="row">
                     <div class="col-lg-2 my-lg-3 mt-2 ps-4">
                         {{form.first_name.label_tag}}
                     </div>
-
-                    
                     <div class="col-lg-4 my-lg-3 mb-4 ps-4">
                         {{form.first_name}}
                     </div>
-                   
                     <div class="col-lg-2 my-lg-3 ps-4">
                         {{form.last_name.label_tag}}
                     </div>
-
-                    
                     <div class="col-lg-4 my-lg-3 mb-4 ps-4">
                         {{form.last_name}}
                     </div>
-
                     <div class="col-lg-2 my-lg-3 ps-4">
                         {{form.phone_number.label_tag}}
                     </div>
-
-                    
                     <div class="col-lg-4 my-lg-3 mb-4 ps-4">
                         {{form.phone_number}}
                     </div>
-                   
                     <div class="col-lg-2 my-lg-3 ps-4">
                         {{form.registration.label_tag}}
-                    </div>
-
-                    
+                    </div>  
                     <div class="col-lg-4 my-lg-3 mb-4 ps-4">
                         {{form.registration}}
                     </div>
-
                     <div class="col-lg-2 my-lg-3 ps-4">
                         {{form.company.label_tag}}
                     </div>
-
-                    
                     <div class="col-lg-4 my-lg-3 mb-4 ps-4">
                         {{form.company}}
                     </div>
-                    
                     <div class="col-lg-2 my-lg-3 ps-4">
                         {{form.destination.label_tag}}
                     </div>
-
-                    
                     <div class="col-lg-4 my-lg-3 mb-4 ps-4">
                         {{form.destination}}
                     </div>
-
-                    
                     <div class="col-lg-2 my-lg-3 ps-4">
                         {{form.gate_number.label_tag}}
                     </div>
-
-                    
                     <div class="col-lg-4 my-lg-3 mb-4 ps-4">
                         {{form.gate_number}}
                     </div>
-
                     <div class="col-lg-2 my-lg-3 ps-4">
                         {{form.officers_name.label_tag}}
                     </div>
-
-                    
                     <div class="col-lg-4 my-lg-3 mb-4 ps-4">
                         {{form.officers_name}}
                     </div>
-
                     <div class="col-lg-2 my-lg-3 ps-4">
                         {{form.parking_time_limit.label_tag}}
                     </div>
-
-                    
                     <div class="col-lg-4 my-lg-3 mb-4 ps-4">
                         {{form.parking_time_limit}}
                     </div>
-
                 </div>
-
-
                 <div class="row">
                     <div class="col m-md-1">
                         <div type="button" class="btn-sm pb-2 pt-2  btn-primary btn-block mt-4" data-bs-toggle="collapse"
@@ -99,90 +67,59 @@
                             Passengers</div>
                     </div>
                 </div>
-
-                
-    
                 <div class="collapse" id="collapse-target">
-
-
                     <div class="row">
                         <div class="col-lg-2 my-lg-3 mt-2 ps-4">
                             {{form.passenger1_first_name.label_tag}}
                         </div>
-
-
                         <div class="col-lg-4 my-lg-3 mb-4 ps-4">
                             {{form.passenger1_first_name}}
                         </div>
-
                         <div class="col-lg-2 my-lg-3 ps-4">
                             {{form.passenger1_last_name.label_tag}}
                         </div>
-
-
                         <div class="col-lg-4 my-lg-3 mb-4 ps-4">
                             {{form.passenger1_last_name}}
                         </div>
-
                         <div class="col-lg-2 my-lg-3 ps-4">
                             {{form.passenger2_first_name.label_tag}}
                         </div>
-
-
                         <div class="col-lg-4 my-lg-3 mb-4 ps-4">
                             {{form.passenger2_first_name}}
                         </div>
-
                         <div class="col-lg-2 my-lg-3 ps-4">
                             {{form.passenger2_last_name.label_tag}}
                         </div>
-
-
                         <div class="col-lg-4 my-lg-3 mb-4 ps-4">
                             {{form.passenger2_last_name}}
                         </div>
-
-
                         <div class="col-lg-2 my-lg-3 ps-4">
                             {{form.passenger3_first_name.label_tag}}
                         </div>
-
-
                         <div class="col-lg-4 my-lg-3 mb-4 ps-4">
                             {{form.passenger3_first_name}}
                         </div>
-
                         <div class="col-lg-2 my-lg-3 ps-4">
                             {{form.passenger3_last_name.label_tag}}
                         </div>
-
-
                         <div class="col-lg-4 my-lg-3 mb-4 ps-4">
                             {{form.passenger3_last_name}}
                         </div>
-
                         <div class="col-lg-2 my-lg-3 ps-4">
                             {{form.passenger4_first_name.label_tag}}
                         </div>
-
-
                         <div class="col-lg-4 my-lg-3 mb-4 ps-4">
                             {{form.passenger4_first_name}}
                         </div>
-
                         <div class="col-lg-2 my-lg-3 ps-4">
                             {{form.passenger4_last_name.label_tag}}
                         </div>
-
-
                         <div class="col-lg-4 my-lg-3 mb-4 ps-4">
                             {{form.passenger4_last_name}}
                         </div>
                     </div>
-
                 </div>
             </div>
-
             <div class="container access-form">
                 <div class="row">
                     <div class="col-lg-2 my-lg-3 mt-2 ps-4">
@@ -203,16 +140,9 @@
                     <div class="col-lg-4 my-lg-3 mb-sm-4 ps-4">
                         {{form.time_in}}
                     </div>
-                    
-                    
                 </div>
             </div>
-           
-               
-            
             <div class="container border access-form">
-
-            
                 <div class="row">
                     <div class="col-lg-5 m-3 ">
                         <h1>Site Rules</h1>
@@ -229,11 +159,9 @@
                     <div class="col-lg-5 ps-4 pe-4">
                         <h1>Acknowledgement</h1>
                         <p>I, the undersigned, understand and accept the site rules</p>
-                        
                         <p>
                             <strong>Signature</strong>
                         </p>
-
                         <canvas height="200px" width="260px" class="signature-pad border" ></canvas>
                         <div class="row d-none">
                             <div class="col-lg-2 my-lg-3 ps-4">
@@ -243,28 +171,19 @@
                                 {{form.signature}}
                             </div>
                         </div>
-
                         <p>
                             <a href="#" class="clear-button">Clear</a>
                         </p>
-
                         <div class="row ">
                             <button id="confirm-signature"  class="btn btn-warning my-3 col-me-4" type="button" onclick="confirmSignature()">1. Confirm Signature</button>
                         </div>
                         <div class="row">
                             <button id="form-submit-btn" class="btn btn-primary my-3 col-pe-2" type="submit" >2. SUBMIT</button>
                         </div>
-                        
-
-                        
                     </div>
                 </div>
             </div>
     </form>
-
-    
-        
-    
 </div>
 
 {% endblock %}
