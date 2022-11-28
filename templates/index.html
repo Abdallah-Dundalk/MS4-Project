@@ -53,7 +53,20 @@
                     <div class="text-center">
                         <h1 class="mx-auto my-0 text-uppercase">Sentry Log</h1>
                         <h2 class="text-white-50 mx-auto mt-2 mb-5">Record all visitors and deliveries that enter your premises. A paperless system for a modern security workforce.</h2>
-                        >
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-8 offset-md-2">
+                                    {% for message in messages %}
+                                    <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg"
+                                    role="alert">
+                                    {{ message | safe }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" >
+                                    </button>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
