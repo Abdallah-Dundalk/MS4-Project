@@ -24,14 +24,10 @@
         <div class="col-2 d-none d-xl-block my-lg-3 mb-4 ps-4">
             <strong>More Info</strong>
         </div>
-        
     </div>
 
     {% for item in items %}
     
-
-
-
         <div class="row border" id="log{{item.id}}">
             <div class="col-6 col-xl-2 d-xl-none ps-4 mt-3 text-end pt-3">
                 <strong>Name:</strong>
@@ -58,25 +54,15 @@
                 {{ item.entry_date|date:"d/m/y"}}
             </div>
             <div class="col-md-4 col-xl-2 my-3" role="group" aria-label="...">
-                <a href="edit_time_out/{{item.id}}" class="btn btn btn-primary w-100" role="button" aria-disabled="true">Check Out</a>
+                <a href="edit_time_out/{{item.id}}" class="btn btn btn-primary w-100" role="button">Check Out</a>
             </div>
             <div class="col-md-4 col-lg-4 d-xl-none"></div>
             <div class="col-md-4 col-xl-2">
                 <button class="btn btn-sm w-100 text-center btn-primary my-3" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapse-target{{item.id}}" aria-expanded="false" aria-controls="collapse-target">
+                    data-bs-target="#collapse-target{{item.id}}" aria-expanded="false" aria-controls="collapse-target{{item.id}}">
                     More
                 </button>
             </div>
-
-
-
-
-
-
-
-
-
-
         <div class="collapse" id="collapse-target{{item.id}}">
             <div class="card card-body">
                 <div class="row">
@@ -158,7 +144,7 @@
                         <strong>Signed {{ item.first_name}} {{item.last_name}}:</strong>
                     </div>
                     <div class="col-md-4">
-                        <div><img height="200px" width="260px" style="display: block;" src="{{item.signature}}">
+                        <div><img height="200" width="260" style="display: block;" src="{{item.signature}}" alt="signature">
                         </div>
                     </div>
                 </div>
@@ -174,17 +160,12 @@
                 </div>
                 {% endif %}
                 
-                 
             </div>
         </div>
+        
+        <!-- timer that compare time between parkign expirey and the current time. If parkign time limit has expired, delivery will change colour to red -->
         <script>
-           
-
-            function overStayedAlarm() {
-                document.getElementById('log{{item.id}}').style.backgroundColor="blue";
-                document.getElementById("timer{{item.id}}").innerHTML = "Over Stayed";
-            }
-
+ 
             function parentCountdown () {
                 const getSeconds = s => s.split(":").reduce((acc, curr) => acc * 60 + +curr, 0);
                 let parkingExpiryInSeconds = getSeconds(document.getElementById("parking_time_limit{{item.id}}").innerHTML);
@@ -230,11 +211,9 @@
                     }
                 }
             }
-         
             parentCountdown ()
         </script>
     </div>
-    
-    
     {% endfor %}
+</div>    
 {% endblock %}

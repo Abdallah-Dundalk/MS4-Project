@@ -6,8 +6,8 @@
 
 {% block content %}
 
-<div class="row">
-  <div class="col-8 offset-2 ">
+<div class="row access-form">
+  <div class="col-8 offset-2 pt-2">
     <h1>{% trans "Sign Out" %}</h1>
 
     <p>{% trans 'Are you sure you want to sign out?' %}</p>
@@ -17,7 +17,7 @@
       {% if redirect_field_value %}
       <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
       {% endif %}
-      <button type="submit" class="btn btn-primary">{% trans 'Sign Out' %}</button>
+      <button type="submit" class="btn btn-primary mb-3">{% trans 'Sign Out' %}</button>
     </form>
   </div>
 </div>

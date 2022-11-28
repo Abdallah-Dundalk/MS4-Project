@@ -107,7 +107,6 @@ canvas.addEventListener('pointerdown', handlePointerDown, {passive: true});
 canvas.addEventListener('pointerup', handlePointerUp, {passive: true});
 canvas.addEventListener('pointermove', handlePointerMove, {passive: true});
 
-
 // When the user clicks confirm signature, the signature string data is pasted to the signature input on the form. 
 const formSignatureField = document.getElementById("id_signature")
 document.getElementById("confirm-signature").addEventListener("click", pasteDataURL);

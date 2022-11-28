@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="container access-form">
-    <form method="POST" class="signature-pad-form ">
+    <form method="POST" class="signature-pad-form">
         {% csrf_token %}
             <div class="row">
                     <div class="col-lg-2 my-lg-3 mt-2 ps-4">
@@ -62,9 +62,10 @@
                 </div>
                 <div class="row">
                     <div class="col m-md-1">
-                        <div type="button" class="btn-sm pb-2 pt-2  btn-primary btn-block mt-4" data-bs-toggle="collapse"
+                        <div role="button" class="btn-sm pb-2 pt-2 btn-primary btn-block mt-4" data-bs-toggle="collapse"
                             data-bs-target="#collapse-target" aria-expanded="false" aria-controls="collapse-target">Add
-                            Passengers</div>
+                            Passengers
+                        </div>
                     </div>
                 </div>
                 <div class="collapse" id="collapse-target">
@@ -119,7 +120,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="container access-form">
                 <div class="row">
                     <div class="col-lg-2 my-lg-3 mt-2 ps-4">
@@ -162,7 +162,7 @@
                         <p>
                             <strong>Signature</strong>
                         </p>
-                        <canvas height="200px" width="260px" class="signature-pad border" ></canvas>
+                        <canvas height="200" width="260" class="signature-pad border" ></canvas>
                         <div class="row d-none">
                             <div class="col-lg-2 my-lg-3 ps-4">
                                 {{form.signature.label_tag}}

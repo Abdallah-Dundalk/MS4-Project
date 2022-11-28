@@ -94,12 +94,12 @@
                 {{ item.time_out|date:"G:i"}}
             </div>
             <div class="col-md-4 col-xl-2 my-3" role="group" aria-label="...">
-                <a href="edit_time_out/{{item.id}}" class="btn btn-primary w-100" role="button" aria-disabled="true">Check Out</a>
+                <a href="edit_time_out/{{item.id}}" class="btn btn-primary w-100" role="button">Check Out</a>
             </div>
             <div class="col-md-4 col-lg-4 d-xl-none"></div>
             <div class="col-md-4 col-xl-2">
                 <button class="btn btn-sm w-100 text-center btn-primary my-3" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapse-target{{item.id}}" aria-expanded="false" aria-controls="collapse-target">
+                    data-bs-target="#collapse-target{{item.id}}" aria-expanded="false" aria-controls="collapse-target{{item.id}}">
                     More
                 </button>
             </div>
@@ -185,7 +185,7 @@
                             <strong>Signed {{ item.first_name}} {{item.last_name}}:</strong>
                         </div>
                         <div class="col-md-4">
-                            <div><img height="200px" width="260px" style="display: block;" src="{{item.signature}}">
+                            <div><img height="200" width="260" style="display: block;" src="{{item.signature}}" alt="signature">
                             </div>
                         </div>
                     </div>
